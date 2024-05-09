@@ -1,10 +1,21 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import login from "../assets/images/login.json";
 import Lottie from "react-lottie";
+import { AuthContext } from "../Services/AuthProvider";
 function Register() {
+  const { createNewUser } = useContext(AuthContext);
+  console.log(createNewUser);
   const [showPassword, setShowPassword] = useState(false);
-  const handleRegister = () => {};
+  const handleRegister = (e) => {
+    e.preventDefault();
+    const form = e.target;
+    const email = form.email.value;
+    const password = form.password.value;
+    createNewUser(email, password)
+      .then((res) => console.log(res.user))
+      .catch((error) => console.log(error));
+  };
   const defaultOptions = {
     loop: true,
     autoplay: true,
@@ -13,7 +24,7 @@ function Register() {
   return (
     <div>
       <div className="max-w-7xl mx-auto">
-        <div className="grid grid-cols-1 lg:grid-cols-2 mx-6 lg:mx-3 gap-12 my-20  ">
+        <div className="grid grid-cols-1 lg:grid-cols-2 mx-6 lg:mx-3 gap-12 my-20  items-center">
           <div className="col-span-1">
             <div data-aos="fade-left" data-aos-duration="900" className="">
               <div className=" space-y-2 text-center">

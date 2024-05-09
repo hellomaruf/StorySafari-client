@@ -1,6 +1,10 @@
 import { Link, NavLink } from "react-router-dom";
 import logo from "../assets/images/logo.png";
+import { useContext } from "react";
+import { AuthContext } from "../Services/AuthProvider";
 function Nav() {
+  const { name } = useContext(AuthContext);
+  console.log(name);
   const link = (
     <>
       <NavLink
@@ -76,7 +80,9 @@ function Nav() {
           <ul className="menu menu-horizontal px-1">{link}</ul>
         </div>
         <div className="navbar-end ">
-          <Link to='/login' className="btn bg-[#A91D3A] text-white">Login</Link>
+          <Link to="/login" className="btn bg-[#A91D3A] text-white">
+            Login
+          </Link>
         </div>
       </div>
     </div>
