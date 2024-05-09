@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import login from "../assets/images/login.json";
 import Lottie from "react-lottie";
 import { AuthContext } from "../Services/AuthProvider";
+import Swal from "sweetalert2";
 function Register() {
   const { createNewUser } = useContext(AuthContext);
   console.log(createNewUser);
@@ -13,7 +14,17 @@ function Register() {
     const email = form.email.value;
     const password = form.password.value;
     createNewUser(email, password)
-      .then((res) => console.log(res.user))
+      .then((res) => {
+        if (res.user) {
+          Swal.fire({
+            confirmButtonColor:'#A91D3A',
+            title: 'Successfully Register!',
+            text: 'Do you want to continue',
+            icon: 'success',
+            confirmButtonText: 'Continue'
+          })
+        }
+      })
       .catch((error) => console.log(error));
   };
   const defaultOptions = {

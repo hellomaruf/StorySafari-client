@@ -5,18 +5,45 @@ import github from "../assets/images/github.png";
 import google from "../assets/images/google.png";
 import Lottie from "react-lottie";
 import { AuthContext } from "../Services/AuthProvider";
+import Swal from "sweetalert2";
 function Login() {
   const [showPassword, setShowPassword] = useState(false);
-  const { signInUser } = useContext(AuthContext);
+  const { signInUser, googleLogin } = useContext(AuthContext);
   const handleGithubLogin = () => {};
-  const handleGoogleLogin = () => {};
+  const handleGoogleLogin = () => {
+    googleLogin()
+      .then((res) => {
+        if (res.user) {
+          Swal.fire({
+            confirmButtonColor: "#A91D3A",
+            title: "Successfully Login!",
+            text: "Do you want to continue",
+            icon: "success",
+            confirmButtonText: "Continue",
+          });
+        }
+      })
+      .then((error) => {
+        console.log(error);
+      });
+  };
   const handleLogin = (e) => {
     e.preventDefault();
     const form = e.target;
     const email = form.email.value;
     const password = form.password.value;
     signInUser(email, password)
-      .then((res) => console.log(res.user))
+      .then((res) => {
+        if (res.user) {
+          Swal.fire({
+            confirmButtonColor: "#A91D3A",
+            title: "Successfully Login!",
+            text: "Do you want to continue",
+            icon: "success",
+            confirmButtonText: "Continue",
+          });
+        }
+      })
       .catch((error) => console.log(error));
   };
   const defaultOptions = {
