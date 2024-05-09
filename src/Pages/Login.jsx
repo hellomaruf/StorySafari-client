@@ -75,7 +75,7 @@ function Login() {
                 </label>
               </div>
               <div className="form-control mt-6">
-                <button className="btn bg-[#A91D3A] hover:bg-gray-700 text-white">
+                <button className="btn bg-[#A91D3A] hover:bg-[#c2405a]  text-white">
                   Login
                 </button>
               </div>
