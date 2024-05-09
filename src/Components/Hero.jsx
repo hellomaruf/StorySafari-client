@@ -23,7 +23,7 @@ function Hero() {
             </p>
             <button className="btn  text-white bg-[#A91D3A]">Learn More</button>
           </div>
-          <div className="stats shadow pt-6">
+          <div className="stats shadow mt-6">
             <div className="stat">
               <div className="stat-figure text-primary">
                 <svg
