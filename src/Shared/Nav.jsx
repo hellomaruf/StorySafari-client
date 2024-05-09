@@ -1,4 +1,4 @@
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import logo from "../assets/images/logo.png";
 function Nav() {
   const link = (
@@ -76,7 +76,7 @@ function Nav() {
           <ul className="menu menu-horizontal px-1">{link}</ul>
         </div>
         <div className="navbar-end ">
-          <a className="btn bg-[#A91D3A] text-white">Login</a>
+          <Link to='/login' className="btn bg-[#A91D3A] text-white">Login</Link>
         </div>
       </div>
     </div>

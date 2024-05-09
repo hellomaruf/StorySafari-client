@@ -1,35 +1,27 @@
 import logo from "../assets/images/logo.png";
-import footer from '../assets/images/footer2.svg'
+import footer from "../assets/images/footer2.svg";
 function Footer() {
   return (
     <div>
       <div className="pt-10">
         <div
-          style={
-            {
-                backgroundImage: `url(${footer})`,
-            }
-          }
+          style={{
+            backgroundImage: `url(${footer})`,
+          }}
           className="bg-[#e8e8e8] z-10 w-full bg-cover"
         >
           <footer className="footer p-10 py-24 text-base-content max-w-7xl mx-auto">
             <aside className="max-w-sm">
-              <div className="flex gap-2 items-center">
-                <img
-                  className="w-10 rounded-full"
-                  src={logo}
-                  alt=""
-                />
+              <div className="flex gap-2 items-center ">
+                <img className="w-10 rounded-full border-2 " src={logo} alt="" />
                 <a className="text-3xl font-extrabold text-white">
                   Story<span className="font-light">Safari</span>
                 </a>
               </div>
               <p className="py-6 text-gray-200">
-                Intuition is the key to everything, in painting, filmmaking,
-                business - everything. I think you could have an intellectual
-                ability, but if you can sharpen your intuition, which they say
-                is emotion and intellect joining together, then a knowingness
-                occurs.
+                A story can always break into pieces while it sits inside a book
+                on a shelf; and, decades after we have read it even twenty
+                times, it can open us up, by cut or caress, to a new truth.
               </p>
               <div className="">
                 <i className=" text-2xl text-white pr-3 ri-facebook-box-fill"></i>
