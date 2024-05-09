@@ -1,14 +1,24 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import login from "../assets/images/login.json";
 import github from "../assets/images/github.png";
 import google from "../assets/images/google.png";
 import Lottie from "react-lottie";
+import { AuthContext } from "../Services/AuthProvider";
 function Login() {
   const [showPassword, setShowPassword] = useState(false);
+  const { signInUser } = useContext(AuthContext);
   const handleGithubLogin = () => {};
   const handleGoogleLogin = () => {};
-  const handleLogin = () => {};
+  const handleLogin = (e) => {
+    e.preventDefault();
+    const form = e.target;
+    const email = form.email.value;
+    const password = form.password.value;
+    signInUser(email, password)
+      .then((res) => console.log(res.user))
+      .catch((error) => console.log(error));
+  };
   const defaultOptions = {
     loop: true,
     autoplay: true,
