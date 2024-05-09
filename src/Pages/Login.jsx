@@ -6,6 +6,7 @@ import google from "../assets/images/google.png";
 import Lottie from "react-lottie";
 import { AuthContext } from "../Services/AuthProvider";
 import Swal from "sweetalert2";
+import toast from "react-hot-toast";
 function Login() {
   const [showPassword, setShowPassword] = useState(false);
   const { signInUser, googleLogin, githubLogin } = useContext(AuthContext);
@@ -23,7 +24,8 @@ function Login() {
         }
       })
       .catch((error) => {
-        console.log(error);
+        const errorMsg = error.message;
+        toast.error(errorMsg);
       });
   };
   const handleGoogleLogin = () => {
@@ -40,7 +42,8 @@ function Login() {
         }
       })
       .then((error) => {
-        console.log(error);
+        const errorMsg = error.message;
+        toast.error(errorMsg);
       });
   };
   const handleLogin = (e) => {
@@ -60,7 +63,10 @@ function Login() {
           });
         }
       })
-      .catch((error) => console.log(error));
+      .catch((error) => {
+        const errorMsg = error.message;
+        toast.error(errorMsg);
+      });
   };
   const defaultOptions = {
     loop: true,

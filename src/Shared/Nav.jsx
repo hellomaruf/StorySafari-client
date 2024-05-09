@@ -3,8 +3,11 @@ import logo from "../assets/images/logo.png";
 import { useContext } from "react";
 import { AuthContext } from "../Services/AuthProvider";
 function Nav() {
-  const { name } = useContext(AuthContext);
-  console.log(name);
+  const { user, logoutUser, setUser } = useContext(AuthContext);
+  const handleLogout = () => {
+    logoutUser();
+    setUser();
+  };
   const link = (
     <>
       <NavLink
@@ -80,9 +83,28 @@ function Nav() {
           <ul className="menu menu-horizontal px-1">{link}</ul>
         </div>
         <div className="navbar-end ">
-          <Link to="/login" className="btn bg-[#A91D3A] text-white">
-            Login
-          </Link>
+          {user ? (
+            <>
+              <button
+                onClick={handleLogout}
+                className="btn bg-[#A91D3A] hover:bg-[#c2405a] text-white"
+              >
+                Logout
+              </button>
+              <div className="avatar pl-3">
+                <div className="w-12 rounded-full">
+                  <img src={user?.photoURL} />
+                </div>
+              </div>
+            </>
+          ) : (
+            <Link
+              to="/login"
+              className="btn bg-[#A91D3A] hover:bg-[#c2405a] text-white"
+            >
+              Login
+            </Link>
+          )}
         </div>
       </div>
     </div>

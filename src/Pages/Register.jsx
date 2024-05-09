@@ -4,28 +4,48 @@ import login from "../assets/images/login.json";
 import Lottie from "react-lottie";
 import { AuthContext } from "../Services/AuthProvider";
 import Swal from "sweetalert2";
+import toast from "react-hot-toast";
 function Register() {
   const { createNewUser } = useContext(AuthContext);
-  console.log(createNewUser);
+  const [passError, setPassError] = useState("");
   const [showPassword, setShowPassword] = useState(false);
   const handleRegister = (e) => {
     e.preventDefault();
     const form = e.target;
     const email = form.email.value;
     const password = form.password.value;
+
+    if (!/^.{6,}$/g.test(password)) {
+      setPassError("Password must be at least 6 character");
+      return;
+    }
+    if (!/^(?=.*[a-z])(?=.*[A-Z]).+$/g.test(password)) {
+      setPassError(
+        "Password should contain at least uppercase and lowercase letters"
+      );
+      return;
+    }
+    if (!/[!@#$%^&*(),.?":{}|<>]/g.test(password)) {
+      setPassError("Password should dontain special character");
+      return;
+    }
+    setPassError("");
     createNewUser(email, password)
       .then((res) => {
         if (res.user) {
           Swal.fire({
-            confirmButtonColor:'#A91D3A',
-            title: 'Successfully Register!',
-            text: 'Do you want to continue',
-            icon: 'success',
-            confirmButtonText: 'Continue'
-          })
+            confirmButtonColor: "#A91D3A",
+            title: "Successfully Register!",
+            text: "Do you want to continue",
+            icon: "success",
+            confirmButtonText: "Continue",
+          });
         }
       })
-      .catch((error) => console.log(error));
+      .catch((error) => {
+        const errorMsg = error.message;
+        toast.error(errorMsg);
+      });
   };
   const defaultOptions = {
     loop: true,
@@ -111,7 +131,7 @@ function Register() {
                       )}
                     </p>
                   </div>
-                  {/* <small className="text-red-600 py-1">{passError}</small> */}
+                  <small className="text-red-600 py-1">{passError}</small>
                   <label className="label">
                     <a href="#" className="label-text-alt link link-hover">
                       Forgot password?
