@@ -8,8 +8,24 @@ import { AuthContext } from "../Services/AuthProvider";
 import Swal from "sweetalert2";
 function Login() {
   const [showPassword, setShowPassword] = useState(false);
-  const { signInUser, googleLogin } = useContext(AuthContext);
-  const handleGithubLogin = () => {};
+  const { signInUser, googleLogin, githubLogin } = useContext(AuthContext);
+  const handleGithubLogin = () => {
+    githubLogin()
+      .then((res) => {
+        if (res.user) {
+          Swal.fire({
+            confirmButtonColor: "#A91D3A",
+            title: "Successfully Login!",
+            text: "Do you want to continue",
+            icon: "success",
+            confirmButtonText: "Continue",
+          });
+        }
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
   const handleGoogleLogin = () => {
     googleLogin()
       .then((res) => {
