@@ -6,6 +6,7 @@ import Register from "../Pages/Register";
 import Error from "../Pages/Error";
 import AddBooks from "../Pages/AddBooks";
 import PrivateRoute from "./PrivateRoute";
+import CategoryCards from "../Pages/CategoryCards";
 export const router = createBrowserRouter([
   {
     path: "/",
@@ -15,6 +16,7 @@ export const router = createBrowserRouter([
       {
         path: "/",
         element: <Home />,
+        loader: () => fetch(`${import.meta.env.VITE_API_URL}/books`),
       },
       {
         path: "/login",
@@ -31,6 +33,12 @@ export const router = createBrowserRouter([
             <AddBooks />
           </PrivateRoute>
         ),
+      },
+      {
+        path: "/category/:name",
+        element: <CategoryCards />,
+        loader: ({ params }) =>
+          fetch(`${import.meta.env.VITE_API_URL}/books/${params.name}`),
       },
     ],
   },

@@ -6,8 +6,11 @@ import entertainment from "../assets/images/Entertainment.png";
 import health from "../assets/images/Health.png";
 import history from "../assets/images/History.png";
 import travel from "../assets/images/Travel.png";
+import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 
-function BooksCategory() {
+function BooksCategory({ books }) {
+  console.log(books);
   return (
     <div>
       <div className="max-w-5xl mx-auto space-y-16 py-10">
@@ -20,30 +23,54 @@ function BooksCategory() {
           </p>
         </div>
         <div className="grid grid-cols-4 items-center justify-center gap-6">
-          <div className="hover:scale-[1.05] transition-all">
+          <Link
+            to="/category/Novel"
+            className="hover:scale-[1.05] transition-all"
+          >
             <img className="" src={novel} alt="" />
-          </div>
-          <div className="hover:scale-[1.05] transition-all">
+          </Link>
+          <Link
+            to="/category/Biographies"
+            className="hover:scale-[1.05] transition-all"
+          >
             <img className="" src={biogra} alt="" />
-          </div>
-          <div className="hover:scale-[1.05] transition-all">
+          </Link>
+          <Link
+            to="/category/History"
+            className="hover:scale-[1.05] transition-all"
+          >
             <img className="" src={history} alt="" />
-          </div>
-          <div className="hover:scale-[1.05] transition-all">
+          </Link>
+          <Link
+            to="/category/Travel"
+            className="hover:scale-[1.05] transition-all"
+          >
             <img className="" src={travel} alt="" />
-          </div>
-          <div className="hover:scale-[1.05] transition-all">
+          </Link>
+          <Link
+            to="/category/Cookbooks"
+            className="hover:scale-[1.05] transition-all"
+          >
             <img className="" src={cookbook} alt="" />
-          </div>
-          <div className="hover:scale-[1.05] transition-all">
+          </Link>
+          <Link
+            to="/category/Comics"
+            className="hover:scale-[1.05] transition-all"
+          >
             <img className="" src={comics} alt="" />
-          </div>
-          <div className="hover:scale-[1.05] transition-all">
+          </Link>
+          <Link
+            to="/category/Entertainment"
+            className="hover:scale-[1.05] transition-all"
+          >
             <img className="" src={entertainment} alt="" />
-          </div>
-          <div className="hover:scale-[1.05] transition-all ">
+          </Link>
+          <Link
+            to="/category/Health"
+            className="hover:scale-[1.05] transition-all "
+          >
             <img className="" src={health} alt="" />
-          </div>
+          </Link>
         </div>
       </div>
     </div>

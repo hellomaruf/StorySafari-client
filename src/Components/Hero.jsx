@@ -1,6 +1,6 @@
-import heroBook from "../assets/images/heroBook.png";
-import heroBook1 from "../assets/images/heroBook1.png";
-import heroBook2 from "../assets/images/heroBook2.png";
+import heroBook from "../assets/images/heroImg3.png";
+import heroBook1 from "../assets/images/heroImg2.png";
+import heroBook3 from "../assets/images/heroImg1.png";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Pagination, Navigation } from "swiper/modules";
 // Import Swiper styles
@@ -10,7 +10,7 @@ import "swiper/css";
 function Hero() {
   return (
     <div className="max-w-7xl mx-auto">
-      <div className="grid grid-cols-2 items-center gap-6 my-12">
+      <div className="grid grid-cols-2 items-center gap-6 my-24">
         <div className="col-span-1 ">
           <div className="space-y-6">
             <h1 className="text-5xl font-bold font-poppins">
@@ -80,7 +80,7 @@ function Hero() {
             </SwiperSlide>
             <SwiperSlide>
               <div className="px-16">
-                <img src={heroBook2} alt="" />
+                <img src={heroBook3} alt="" />
               </div>
             </SwiperSlide>
           </Swiper>
