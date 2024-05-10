@@ -1,5 +1,5 @@
 import { useContext, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import login from "../assets/images/login.json";
 import Lottie from "react-lottie";
 import { AuthContext } from "../Services/AuthProvider";
@@ -9,6 +9,9 @@ function Register() {
   const { createNewUser } = useContext(AuthContext);
   const [passError, setPassError] = useState("");
   const [showPassword, setShowPassword] = useState(false);
+  const location = useLocation()
+  const navigate = useNavigate()
+  const from = location.state || '/'
   const handleRegister = (e) => {
     e.preventDefault();
     const form = e.target;
@@ -32,6 +35,7 @@ function Register() {
     setPassError("");
     createNewUser(email, password)
       .then((res) => {
+        navigate(from)
         if (res.user) {
           Swal.fire({
             confirmButtonColor: "#A91D3A",

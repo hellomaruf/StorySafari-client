@@ -5,11 +5,12 @@ import Login from "../Pages/Login";
 import Register from "../Pages/Register";
 import Error from "../Pages/Error";
 import AddBooks from "../Pages/AddBooks";
+import PrivateRoute from "./PrivateRoute";
 export const router = createBrowserRouter([
   {
     path: "/",
     element: <MainLayouts />,
-    errorElement:<Error/>,
+    errorElement: <Error />,
     children: [
       {
         path: "/",
@@ -24,9 +25,13 @@ export const router = createBrowserRouter([
         element: <Register />,
       },
       {
-        path: '/addBooks',
-        element: <AddBooks/>
-      }
+        path: "/addBooks",
+        element: (
+          <PrivateRoute>
+            <AddBooks />
+          </PrivateRoute>
+        ),
+      },
     ],
   },
 ]);

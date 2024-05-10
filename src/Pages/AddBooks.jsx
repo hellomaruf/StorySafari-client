@@ -22,27 +22,27 @@ function AddBooks() {
             <fieldset className="grid grid-cols-4 gap-6 p-6 rounded-2xl shadow-sm  border-2 bg-gray-50 border-[#A91D3A]">
               <div className="grid grid-cols-6 gap-4 col-span-full ">
                 <div className="col-span-full sm:col-span-3">
-             
                   <label htmlFor="firstname" className="text-lg font-medium">
                     Category Name
                   </label>
                   <select
-                    className="w-full rounded-md  p-2 outline-none border"
+                    className="w-full rounded-md focus:bg-[#ffe7ec]  p-2 outline-none border"
                     name="itemName"
                     id="cars"
                   >
                     <option value="Landscape Painting">
-                      Landscape Painting
+                    Biographies
                     </option>
-                    <option value="Portrait Drawing">Portrait Drawing</option>
+                    <option value="Portrait Drawing">Comics</option>
                     <option value="Watercolour Painting">
-                      Watercolour Painting
+                    Entertainment
                     </option>
-                    <option value="Oil Painting">Oil Painting</option>
+                    <option value="Oil Painting">Health & Fitness</option>
                     <option value="Charcoal Sketching">
-                      Charcoal Sketching
+                    Cookbooks
                     </option>
-                    <option value="Cartoon Drawing">Cartoon Drawing</option>
+                    <option value="Cartoon Drawing">Travel</option>
+                    <option value="Cartoon Drawing">History</option>
                   </select>
                 </div>
                 <div className="col-span-full sm:col-span-3">
@@ -51,24 +51,24 @@ function AddBooks() {
                   </label>
                   <input
                     required
-                    name="subcategory"
+                    name="bookName"
                     type="text"
-                    placeholder="Enter Subcategory Name"
-                    className="w-full rounded-md p-2 outline-none border "
+                    placeholder="Enter Book Name"
+                    className="w-full border-2 focus:bg-[#ffe7ec] rounded-md p-2 outline-none  "
                   />
                 </div>
               </div>
               <div className="grid grid-cols-6 gap-4 col-span-full ">
                 <div className="col-span-full sm:col-span-3">
                   <label htmlFor="firstname" className="text-lg font-medium">
-                  Quantity
+                    Quantity
                   </label>
                   <input
                     required
                     name="quantity"
                     type="number"
-                    placeholder="Enter Price"
-                    className="w-full rounded-md  p-2 outline-none border"
+                    placeholder="Enter Quantity"
+                    className="w-full focus:bg-[#ffe7ec] rounded-md  p-2 outline-none border"
                   />
                 </div>
                 <div className="col-span-full sm:col-span-3">
@@ -80,11 +80,11 @@ function AddBooks() {
                     name="rating"
                     type="number"
                     placeholder="Enter Rating"
-                    className="w-full rounded-md p-2 outline-none border "
+                    className="w-full focus:bg-[#ffe7ec] rounded-md p-2 outline-none border "
                   />
                 </div>
               </div>
-            
+
               <div className="grid grid-cols-6 gap-4 col-span-full ">
                 <div className="col-span-full ">
                   <label htmlFor="firstname" className="text-lg font-medium">
@@ -95,7 +95,7 @@ function AddBooks() {
                     name="authName"
                     type="text"
                     placeholder="Enter Your Name"
-                    className="w-full rounded-md  p-2 outline-none border"
+                    className="w-full focus:bg-[#ffe7ec] rounded-md  p-2 outline-none border"
                   />
                 </div>
 
@@ -108,7 +108,7 @@ function AddBooks() {
                     name="photo"
                     type="text"
                     placeholder="Enter Photo URL"
-                    className="w-full rounded-md  p-2 outline-none border"
+                    className="w-full focus:bg-[#ffe7ec] rounded-md  p-2 outline-none border"
                   />
                   <div className=" mt-5">
                     <label htmlFor="firstname" className="text-lg font-medium">
@@ -119,10 +119,9 @@ function AddBooks() {
                       name="description"
                       type="text"
                       placeholder="Enter a Short Description"
-                      className="w-full rounded-md  p-2 outline-none border"
+                      className="w-full focus:bg-[#ffe7ec] rounded-md  p-2 outline-none border"
                     />
                   </div>
-               
                 </div>
 
                 <div className="">

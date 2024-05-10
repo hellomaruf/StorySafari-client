@@ -4,6 +4,7 @@ import { useContext } from "react";
 import { AuthContext } from "../Services/AuthProvider";
 function Nav() {
   const { user, logoutUser, setUser } = useContext(AuthContext);
+  console.log(user);
   const handleLogout = () => {
     logoutUser();
     setUser();

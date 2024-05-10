@@ -1,5 +1,5 @@
 import { useContext, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import login from "../assets/images/login.json";
 import github from "../assets/images/github.png";
 import google from "../assets/images/google.png";
@@ -10,9 +10,13 @@ import toast from "react-hot-toast";
 function Login() {
   const [showPassword, setShowPassword] = useState(false);
   const { signInUser, googleLogin, githubLogin } = useContext(AuthContext);
+  const location = useLocation();
+  const navigate = useNavigate();
+  const from = location.state || "/";
   const handleGithubLogin = () => {
     githubLogin()
       .then((res) => {
+        navigate(from);
         if (res.user) {
           Swal.fire({
             confirmButtonColor: "#A91D3A",
@@ -31,6 +35,8 @@ function Login() {
   const handleGoogleLogin = () => {
     googleLogin()
       .then((res) => {
+        navigate(from);
+
         if (res.user) {
           Swal.fire({
             confirmButtonColor: "#A91D3A",
@@ -53,6 +59,7 @@ function Login() {
     const password = form.password.value;
     signInUser(email, password)
       .then((res) => {
+        navigate(from);
         if (res.user) {
           Swal.fire({
             confirmButtonColor: "#A91D3A",
