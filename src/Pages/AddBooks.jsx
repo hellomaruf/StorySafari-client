@@ -1,5 +1,49 @@
+import { useContext } from "react";
+import { AuthContext } from "../Services/AuthProvider";
+import axios from "axios";
+import Swal from "sweetalert2";
+
 function AddBooks() {
-  const handleAddBooks = () => {};
+  const { user } = useContext(AuthContext);
+  const handleAddBooks = (e) => {
+    e.preventDefault();
+    const form = e.target;
+    const category_name = form.cateName.value;
+    const book_name = form.bookName.value;
+    const quantity = form.quantity.value;
+    const rating = form.rating.value;
+    const author_Name = form.authName.value;
+    const photo = form.photo.value;
+    const description = form.description.value;
+
+    const booksInfo = {
+      category_name,
+      book_name,
+      quantity,
+      rating,
+      author_Name,
+      photo,
+      description,
+    };
+
+    axios
+      .post(`${import.meta.env.VITE_API_URL}/books`, booksInfo)
+      .then((res) => {
+        console.log(res.data);
+        if (res.data) {
+          Swal.fire({
+            confirmButtonColor: "#A91D3A",
+            title: "Book Add Successfully!",
+            text: "Do you want to continue",
+            icon: "success",
+            confirmButtonText: "Continue",
+          });
+        }
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
   return (
     <div>
       <div className="">
@@ -27,25 +71,17 @@ function AddBooks() {
                   </label>
                   <select
                     className="w-full rounded-md focus:bg-[#ffe7ec]  p-2 outline-none border"
-                    name="itemName"
+                    name="cateName"
                     id="cars"
                   >
-                    <option value="Landscape Painting">
-                    Novel
-                    </option>
-                    <option value="Landscape Painting">
-                    Biographies
-                    </option>
-                    <option value="Portrait Drawing">Comics</option>
-                    <option value="Watercolour Painting">
-                    Entertainment
-                    </option>
-                    <option value="Oil Painting">Health</option>
-                    <option value="Charcoal Sketching">
-                    Cookbooks
-                    </option>
-                    <option value="Cartoon Drawing">Travel</option>
-                    <option value="Cartoon Drawing">History</option>
+                    <option value="Novel">Novel</option>
+                    <option value="Biographies">Biographies</option>
+                    <option value="Comics">Comics</option>
+                    <option value="Entertainment">Entertainment</option>
+                    <option value="Health">Health</option>
+                    <option value="Cookbooks">Cookbooks</option>
+                    <option value="Travel">Travel</option>
+                    <option value="History">History</option>
                   </select>
                 </div>
                 <div className="col-span-full sm:col-span-3">
@@ -95,6 +131,8 @@ function AddBooks() {
                   </label>
                   <input
                     required
+                    disabled
+                    defaultValue={user?.displayName}
                     name="authName"
                     type="text"
                     placeholder="Enter Your Name"
