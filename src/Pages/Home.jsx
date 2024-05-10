@@ -1,11 +1,13 @@
 import About from "../Components/About";
 import Hero from "../Components/Hero";
+import Recomended from "../Components/Recomended";
 
 function Home() {
   return (
     <div>
       <Hero />
-      <About/>
+      <Recomended/>
+      <About />
     </div>
   );
 }
