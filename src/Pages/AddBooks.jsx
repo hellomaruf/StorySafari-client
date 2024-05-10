@@ -31,13 +31,16 @@ function AddBooks() {
                     id="cars"
                   >
                     <option value="Landscape Painting">
+                    Novel
+                    </option>
+                    <option value="Landscape Painting">
                     Biographies
                     </option>
                     <option value="Portrait Drawing">Comics</option>
                     <option value="Watercolour Painting">
                     Entertainment
                     </option>
-                    <option value="Oil Painting">Health & Fitness</option>
+                    <option value="Oil Painting">Health</option>
                     <option value="Charcoal Sketching">
                     Cookbooks
                     </option>

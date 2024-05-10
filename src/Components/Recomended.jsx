@@ -23,12 +23,12 @@ function Recomended() {
       >
         <h2 className="text-3xl font-semibold">Recomended For You</h2>
         <p className="max-w-3xl mx-auto">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores,
-          iure? Lorem ipsum dolor sit amet consectetur adipisicing elit.
-          Maiores, repellat.
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores,
-          iure? Lorem ipsum dolor sit amet consectetur adipisicing elit.
-          Maiores, repellat.
+          A library is a good place to go when you feel unhappy, for there, in a
+          book, you may find encouragement and comfort. A library is a good
+          place to go when you feel bewildered or undecided, for there, in a
+          book, you may have your question answered. Books are good company, in
+          sad times and happy times, for books are people - people who have
+          managed to stay alive by hiding between the covers of a book
         </p>
         <div className="">
           <Swiper
