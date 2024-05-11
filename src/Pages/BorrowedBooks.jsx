@@ -1,8 +1,7 @@
-import { Link, useLoaderData } from "react-router-dom";
+import { useLoaderData } from "react-router-dom";
 
 function BorrowedBooks() {
   const borrowedBooks = useLoaderData();
-  console.log(borrowedBooks);
   return (
     <div className="max-w-7xl mx-auto">
       <h2 className="text-2xl font-semibold py-6">
@@ -36,12 +35,12 @@ function BorrowedBooks() {
 
               <div className="py-2"></div>
               <div className="card-actions">
-                <Link
-                  to={`/bookDetails/${book?._id}`}
+                <button
+                 
                   className="btn bg-[#A91D3A] hover:bg-[#af445a] text-white"
                 >
                   Return
-                </Link>
+                </button>
               </div>
             </div>
           </div>

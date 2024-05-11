@@ -3,6 +3,7 @@ import { useContext } from "react";
 import { useLoaderData } from "react-router-dom";
 import { AuthContext } from "../Services/AuthProvider";
 import axios from "axios";
+import Swal from "sweetalert2";
 
 function BookDetails() {
   const { user } = useContext(AuthContext);
@@ -42,6 +43,15 @@ function BookDetails() {
       .post(`${import.meta.env.VITE_API_URL}/borrow`, borrowInfo)
       .then((res) => {
         console.log(res.data);
+        if (res.data) {
+          Swal.fire({
+            confirmButtonColor: "#A91D3A",
+            title: "Borrow Book Successfully!",
+            text: "Do you want to continue",
+            icon: "success",
+            confirmButtonText: "Continue",
+          });
+        }
       })
       .catch((error) => {
         console.log(error);
@@ -113,7 +123,8 @@ function BookDetails() {
             {/* The button to open modal */}
             <label
               htmlFor="my_modal_7"
-              className="btn bg-[#A91D3A] hover:bg-[#c54861] text-white mt-4"
+              disabled={quantity === 0}
+              className="btn bg-[#A91D3A]  hover:bg-[#c54861] text-white mt-4"
             >
               Borrow
             </label>
@@ -170,7 +181,7 @@ function BookDetails() {
                   </div>
 
                   <div className="form-control mt-6">
-                    <button className="btn bg-[#A91D3A] hover:bg-[#c2405a] text-white">
+                    <button className="btn bg-[#A91D3A]  hover:bg-[#c2405a] text-white">
                       Submit
                     </button>
                   </div>

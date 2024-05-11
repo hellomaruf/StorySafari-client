@@ -1,16 +1,17 @@
-import { useContext } from "react";
+import { useContext} from "react";
 import { AuthContext } from "../Services/AuthProvider";
 import axios from "axios";
 import Swal from "sweetalert2";
 
 function AddBooks() {
   const { user } = useContext(AuthContext);
+
   const handleAddBooks = (e) => {
     e.preventDefault();
     const form = e.target;
     const category_name = form.cateName.value;
     const book_name = form.bookName.value;
-    const quantity = form.quantity.value;
+    const quantity = parseInt(form.quantity.value);
     const rating = form.rating.value;
     const author_Name = form.authName.value;
     const photo = form.photo.value;
@@ -30,6 +31,7 @@ function AddBooks() {
       .post(`${import.meta.env.VITE_API_URL}/books`, booksInfo)
       .then((res) => {
         console.log(res.data);
+     
         if (res.data) {
           Swal.fire({
             confirmButtonColor: "#A91D3A",
