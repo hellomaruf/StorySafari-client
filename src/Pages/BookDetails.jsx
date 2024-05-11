@@ -1,9 +1,11 @@
 import { Rate } from "antd";
+import { useContext } from "react";
 import { useLoaderData } from "react-router-dom";
+import { AuthContext } from "../Services/AuthProvider";
 
 function BookDetails() {
+  const { user } = useContext(AuthContext);
   const book = useLoaderData();
-  console.log(book);
   const {
     category_name,
     description,
@@ -13,6 +15,8 @@ function BookDetails() {
     quantity,
     book_name,
   } = book;
+
+  const handleSubmit = () => {};
   return (
     <div className="max-w-7xl mx-auto">
       <div className="grid grid-cols-1 lg:grid-cols-2 items-center   mx-6 lg:mx-3">
@@ -66,9 +70,77 @@ function BookDetails() {
               <h3 className="font-bold text-lg pb-2">Description</h3>
               <p>{description}</p>
             </div>
-            <button className="btn bg-[#A91D3A] hover:bg-[#c54861] text-white mt-4">
+
+            {/* The button to open modal */}
+            <label
+              htmlFor="my_modal_7"
+              className="btn bg-[#A91D3A] hover:bg-[#c54861] text-white mt-4"
+            >
               Borrow
-            </button>
+            </label>
+
+            {/* Put this part before </body> tag */}
+            <input type="checkbox" id="my_modal_7" className="modal-toggle" />
+            <div className="modal" role="dialog">
+              <div className="modal-box">
+                <form
+                  onSubmit={handleSubmit}
+                  data-aos="fade-left"
+                  data-aos-duration="1000"
+                  className=" col-span-1  mt-2 "
+                >
+                  <div className="form-control">
+                    <label className="label">
+                      <span className="label-text">Name</span>
+                    </label>
+                    <input
+                      name="name"
+                      defaultValue={user?.displayName}
+                      disabled
+                      type="text"
+                      placeholder="Enter your Name"
+                      className="input input-bordered"
+                      required
+                    />
+                  </div>
+                  <div className="form-control">
+                    <label className="label">
+                      <span className="label-text">Email</span>
+                    </label>
+                    <input
+                      name="email"
+                      defaultValue={user?.email}
+                      disabled
+                      type="email"
+                      placeholder="Enter your Email"
+                      className="input input-bordered"
+                      required
+                    />
+                  </div>
+                  <div className="form-control">
+                    <label className="label">
+                      <span className="label-text">Return Data</span>
+                    </label>
+                    <input
+                      name="reDate"
+                      type="date"
+                      placeholder="Date"
+                      className="input input-bordered"
+                      required
+                    />
+                  </div>
+
+                  <div className="form-control mt-6">
+                    <button className="btn bg-[#A91D3A] hover:bg-[#c2405a] text-white">
+                      Submit
+                    </button>
+                  </div>
+                </form>
+              </div>
+              <label className="modal-backdrop" htmlFor="my_modal_7">
+                Close
+              </label>
+            </div>
           </div>
         </div>
       </div>
