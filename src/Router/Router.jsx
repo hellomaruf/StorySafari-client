@@ -8,6 +8,7 @@ import AddBooks from "../Pages/AddBooks";
 import PrivateRoute from "./PrivateRoute";
 import CategoryCards from "../Pages/CategoryCards";
 import BookDetails from "../Pages/BookDetails";
+import BorrowedBooks from "../Pages/BorrowedBooks";
 export const router = createBrowserRouter([
   {
     path: "/",
@@ -46,6 +47,12 @@ export const router = createBrowserRouter([
         element: <BookDetails />,
         loader: ({ params }) =>
           fetch(`${import.meta.env.VITE_API_URL}/book/${params.id}`),
+      },
+      {
+        path: "/borrowedBooks/:email",
+        element: <BorrowedBooks />,
+        loader: ({ params }) =>
+          fetch(`${import.meta.env.VITE_API_URL}/borrowed/${params.email}`),
       },
     ],
   },

@@ -36,7 +36,7 @@ function Nav() {
         All Books
       </NavLink>
       <NavLink
-        to="/borrowedBooks"
+        to={`/borrowedBooks/${user?.email}`}
         className={({ isActive }) =>
           isActive ? "text-[#A91D3A] pr-4" : "text-gray-900 pr-4"
         }

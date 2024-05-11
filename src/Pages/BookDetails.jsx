@@ -2,11 +2,15 @@ import { Rate } from "antd";
 import { useContext } from "react";
 import { useLoaderData } from "react-router-dom";
 import { AuthContext } from "../Services/AuthProvider";
+import axios from "axios";
 
 function BookDetails() {
   const { user } = useContext(AuthContext);
   const book = useLoaderData();
+  const current_date = new Date().toLocaleDateString();
+
   const {
+    _id,
     category_name,
     description,
     photo,
@@ -16,7 +20,42 @@ function BookDetails() {
     book_name,
   } = book;
 
-  const handleSubmit = () => {};
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const form = e.target;
+    const name = form.name.value;
+    const email = form.email.value;
+    const return_date = form.reDate.value;
+
+    const borrowInfo = {
+      name,
+      email,
+      return_date,
+      current_date,
+      book_name,
+      category_name,
+      photo,
+    };
+    console.log(borrowInfo);
+
+    axios
+      .post(`${import.meta.env.VITE_API_URL}/borrow`, borrowInfo)
+      .then((res) => {
+        console.log(res.data);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+
+    axios
+      .patch(`${import.meta.env.VITE_API_URL}/reduceQua/${_id}`, quantity)
+      .then((res) => {
+        console.log(res.data);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
   return (
     <div className="max-w-7xl mx-auto">
       <div className="grid grid-cols-1 lg:grid-cols-2 items-center   mx-6 lg:mx-3">
