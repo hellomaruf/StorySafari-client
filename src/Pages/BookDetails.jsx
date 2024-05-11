@@ -9,6 +9,7 @@ function BookDetails() {
   const { user } = useContext(AuthContext);
   const book = useLoaderData();
   const current_date = new Date().toLocaleDateString();
+  //   const [reload, setReload] = useState(true);
 
   const {
     _id,
@@ -36,6 +37,8 @@ function BookDetails() {
       book_name,
       category_name,
       photo,
+      quantity,
+      book_id: _id,
     };
     console.log(borrowInfo);
 
@@ -57,10 +60,12 @@ function BookDetails() {
         console.log(error);
       });
 
+    // useEffect(() => {}, []);
     axios
       .patch(`${import.meta.env.VITE_API_URL}/reduceQua/${_id}`, quantity)
       .then((res) => {
         console.log(res.data);
+        window.location.reload();
       })
       .catch((error) => {
         console.log(error);
