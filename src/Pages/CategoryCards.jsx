@@ -2,11 +2,15 @@
 import { useLoaderData } from "react-router-dom";
 
 import { Rate } from "antd";
+import { Link } from "react-router-dom";
 function CategoryCards() {
   const books = useLoaderData();
+  console.log(books);
   return (
     <div className="max-w-7xl mx-auto ">
-      <h2 className="text-2xl font-semibold py-6">This category has { books.length} items</h2>
+      <h2 className="text-2xl font-semibold py-6">
+        This category has {books.length} items
+      </h2>
       <div className=" grid grid-cols-3 gap-5 ">
         {books.map((book, index) => (
           <div key={index} className="card w-96 bg-base-100 shadow-xl">
@@ -24,9 +28,9 @@ function CategoryCards() {
                 <Rate defaultValue={book?.rating} />
               </div>
               <div className="card-actions">
-                <button className="btn bg-[#A91D3A] text-white">
+                <Link to={`/bookDetails/${book?._id}`} className="btn bg-[#A91D3A] text-white">
                   View Details
-                </button>
+                </Link>
               </div>
             </div>
           </div>
