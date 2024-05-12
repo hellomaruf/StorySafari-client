@@ -7,7 +7,7 @@ import Swal from "sweetalert2";
 import toast from "react-hot-toast";
 import axios from "axios";
 function Register() {
-  const { createNewUser } = useContext(AuthContext);
+  const { createNewUser, updateUserProfile } = useContext(AuthContext);
   const [passError, setPassError] = useState("");
   const [showPassword, setShowPassword] = useState(false);
   const location = useLocation();
@@ -18,6 +18,8 @@ function Register() {
     const form = e.target;
     const email = form.email.value;
     const password = form.password.value;
+    const name = form.name.value;
+    const photo = form.photo.value;
 
     if (!/^.{6,}$/g.test(password)) {
       setPassError("Password must be at least 6 character");
@@ -43,6 +45,14 @@ function Register() {
           },
           { withCredentials: true }
         );
+
+        updateUserProfile(name, photo)
+          .then((res) => {
+            console.log(res);
+          })
+          .catch((error) => {
+            console.log(error);
+          });
         navigate(from);
         if (res.user) {
           Swal.fire({

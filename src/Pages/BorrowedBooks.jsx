@@ -16,7 +16,7 @@ function BorrowedBooks() {
         setBorrowedBooks(data);
         setDisplayBooks(data);
       });
-  }, []);
+  }, [user]);
 
   const handleReturn = (book_id, quantity, borrow_id) => {
     axios

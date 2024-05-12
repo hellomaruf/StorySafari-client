@@ -57,18 +57,30 @@ export const router = createBrowserRouter([
       },
       {
         path: "/borrowedBooks/:email",
-        element: <BorrowedBooks />,
+        element: (
+          <PrivateRoute>
+            <BorrowedBooks />
+          </PrivateRoute>
+        ),
         loader: ({ params }) =>
           fetch(`${import.meta.env.VITE_API_URL}/borrowed/${params.email}`),
       },
       {
         path: "/allBooksTable",
-        element: <AllBooksTable />,
+        element: (
+          <PrivateRoute>
+            <AllBooksTable />
+          </PrivateRoute>
+        ),
         loader: () => fetch(`${import.meta.env.VITE_API_URL}/books`),
       },
       {
         path: "/allBooksCard",
-        element: <AllBooksCard />,
+        element: (
+          <PrivateRoute>
+            <AllBooksCard />
+          </PrivateRoute>
+        ),
         loader: () => fetch(`${import.meta.env.VITE_API_URL}/books`),
       },
       {
