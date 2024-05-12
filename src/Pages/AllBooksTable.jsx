@@ -1,5 +1,5 @@
 import { Rate } from "antd";
-import { useLoaderData } from "react-router-dom";
+import { Link, useLoaderData } from "react-router-dom";
 
 function AllBooksTable() {
   const books = useLoaderData();
@@ -7,6 +7,59 @@ function AllBooksTable() {
   return (
     <div className="max-w-7xl mx-auto my-16">
       <div className="overflow-x-auto">
+        <div className="flex mb-12 ">
+          <div className="dropdown dropdown-right dropdown-hover">
+            <div tabIndex={0} role="button" className="mr-3">
+              <a
+                className="group relative inline-flex items-center overflow-hidden  bg-[#A91D3A] rounded-xl px-8 py-3 text-white focus:outline-none focus:ring active:bg-indigo-500"
+                href="#"
+              >
+                <span className="absolute -end-full transition-all group-hover:end-4">
+                  <svg
+                    className="size-5 rtl:rotate-180"
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth="2"
+                      d="M17 8l4 4m0 0l-4 4m4-4H3"
+                    />
+                  </svg>
+                </span>
+
+                <span className="text-sm font-medium transition-all group-hover:me-4">
+                  {" "}
+                  View{" "}
+                </span>
+              </a>
+            </div>
+            <ul
+              tabIndex={0}
+              className="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52"
+            >
+              <li>
+                <Link
+                  to="/allBooksTable"
+                  className="flex items-center justify-center"
+                >
+                  <i className="ri-archive-drawer-line"></i>
+                  <a>Table View</a>
+                </Link>
+              </li>
+              <li>
+                <div className="flex items-center justify-center">
+                  <i className="ri-grid-fill"></i>
+                  <a>Card View</a>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+
         <table className="table">
           {/* head */}
           <thead>
@@ -40,7 +93,9 @@ function AllBooksTable() {
                 </td>
                 <td> {book?.category_name}</td>
                 <td>{book?.author_Name}</td>
-                <td><Rate defaultValue={book?.rating}/></td>
+                <td>
+                  <Rate defaultValue={book?.rating} />
+                </td>
                 <th>
                   <button className="btn btn-sm border-2 border-[#A91D3A] hover:border-[#A91D3A] text-[#A91D3A]">
                     Update
