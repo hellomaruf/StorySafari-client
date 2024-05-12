@@ -54,7 +54,7 @@ function AllBooksCard() {
                 to="/allBooksCard"
                 className="flex items-center justify-center"
               >
-                <i className="ri-archive-drawer-line"></i>
+                <i className="ri-grid-fill"></i>
                 <a>Card View</a>
               </Link>
             </li>
@@ -108,9 +108,12 @@ function AllBooksCard() {
                   <Rate defaultValue={book?.rating} />
                 </div>
                 <form className="mt-4">
-                  <button className="btn w-full rounded bg-[#A91D3A] hover:bg-[#c04a62] text-white  ">
+                  <Link
+                    to={`/updateBooks/${book?._id}`}
+                    className="btn w-full rounded bg-[#A91D3A] hover:bg-[#c04a62] text-white  "
+                  >
                     Update
-                  </button>
+                  </Link>
                 </form>
               </div>
             </a>
