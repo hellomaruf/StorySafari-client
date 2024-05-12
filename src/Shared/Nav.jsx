@@ -28,7 +28,7 @@ function Nav() {
         Add Books
       </NavLink>
       <NavLink
-        to="/allBooks"
+        to="/allBooksTable"
         className={({ isActive }) =>
           isActive ? "text-[#A91D3A] pr-4" : "text-gray-900 pr-4"
         }

@@ -13,7 +13,7 @@ function PrivateRoute({ children }) {
   }
   return (
     <div>
-      <Navigate to="/login" state={location.state} replace={true}></Navigate>
+      <Navigate to="/login" state={location.pathname} replace={true}></Navigate>
     </div>
   );
 }
