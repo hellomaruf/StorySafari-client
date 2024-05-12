@@ -51,10 +51,13 @@ function AllBooksTable() {
                 </Link>
               </li>
               <li>
-                <div className="flex items-center justify-center">
-                  <i className="ri-grid-fill"></i>
+                <Link
+                  to="/allBooksCard"
+                  className="flex items-center justify-center"
+                >
+                  <i className="ri-archive-drawer-line"></i>
                   <a>Card View</a>
-                </div>
+                </Link>
               </li>
             </ul>
           </div>

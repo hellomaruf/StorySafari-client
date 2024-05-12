@@ -10,6 +10,7 @@ import CategoryCards from "../Pages/CategoryCards";
 import BookDetails from "../Pages/BookDetails";
 import BorrowedBooks from "../Pages/BorrowedBooks";
 import AllBooksTable from "../Pages/AllBooksTable";
+import AllBooksCard from "../Pages/AllBooksCard";
 export const router = createBrowserRouter([
   {
     path: "/",
@@ -64,6 +65,12 @@ export const router = createBrowserRouter([
         element: <AllBooksTable />,
         loader: () => fetch(`${import.meta.env.VITE_API_URL}/books`),
       },
+      {
+        path: '/allBooksCard',
+        element: <AllBooksCard />,
+        loader: () => fetch(`${import.meta.env.VITE_API_URL}/books`),
+        
+      }
     ],
   },
 ]);
