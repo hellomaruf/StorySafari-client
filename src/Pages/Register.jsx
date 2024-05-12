@@ -5,13 +5,14 @@ import Lottie from "react-lottie";
 import { AuthContext } from "../Services/AuthProvider";
 import Swal from "sweetalert2";
 import toast from "react-hot-toast";
+import axios from "axios";
 function Register() {
   const { createNewUser } = useContext(AuthContext);
   const [passError, setPassError] = useState("");
   const [showPassword, setShowPassword] = useState(false);
-  const location = useLocation()
-  const navigate = useNavigate()
-  const from = location.state || '/'
+  const location = useLocation();
+  const navigate = useNavigate();
+  const from = location.state || "/";
   const handleRegister = (e) => {
     e.preventDefault();
     const form = e.target;
@@ -34,8 +35,15 @@ function Register() {
     }
     setPassError("");
     createNewUser(email, password)
-      .then((res) => {
-        navigate(from)
+      .then(async (res) => {
+        await axios.post(
+          `${import.meta.env.VITE_API_URL}/jwt`,
+          {
+            email: res?.user?.email,
+          },
+          { withCredentials: true }
+        );
+        navigate(from);
         if (res.user) {
           Swal.fire({
             confirmButtonColor: "#A91D3A",

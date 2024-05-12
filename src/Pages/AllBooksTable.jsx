@@ -1,13 +1,19 @@
 import { Rate } from "antd";
+import { useState } from "react";
 import { Link, useLoaderData } from "react-router-dom";
 
 function AllBooksTable() {
   const books = useLoaderData();
+  const [filteredBooks, setFilteredBooks] = useState(books);
   console.log(books);
+  const handleAvailable = () => {
+    const available = filteredBooks.filter((book) => book.quantity > 0);
+    setFilteredBooks(available);
+  };
   return (
     <div className="max-w-7xl mx-auto my-16">
       <div className="overflow-x-auto">
-        <div className="flex mb-12 ">
+        <div className="flex items-center justify-between mb-12 ">
           <div className="dropdown dropdown-right dropdown-hover">
             <div tabIndex={0} role="button" className="mr-3">
               <a
@@ -61,6 +67,14 @@ function AllBooksTable() {
               </li>
             </ul>
           </div>
+          <div className="">
+            <button
+              onClick={handleAvailable}
+              className="btn border-2 bg-transparent border-[#A91D3A] text-[#A91D3A] hover:border-[#A91D3A]"
+            >
+              <i className="ri-filter-line"></i>Available Books
+            </button>
+          </div>
         </div>
 
         <table className="table">
@@ -76,7 +90,7 @@ function AllBooksTable() {
             </tr>
           </thead>
           <tbody>
-            {books.map((book, index) => (
+            {filteredBooks.map((book, index) => (
               <tr className="hover rounded-xl" key={index}>
                 <td>
                   <div className="flex items-center gap-3">
@@ -101,7 +115,7 @@ function AllBooksTable() {
                 </td>
                 <th>
                   <Link
-                    to="/updateBooks"
+                    to={`/updateBooks/${book?._id}`}
                     className="btn btn-sm border-2 border-[#A91D3A] hover:border-[#A91D3A] text-[#A91D3A]"
                   >
                     Update

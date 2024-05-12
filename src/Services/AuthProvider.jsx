@@ -8,6 +8,7 @@ import {
 import { createContext, useEffect, useState } from "react";
 import { auth } from "./firebase.config";
 import { GoogleAuthProvider, GithubAuthProvider } from "firebase/auth";
+import axios from "axios";
 
 export const AuthContext = createContext();
 function AuthProvider({ children }) {
@@ -40,11 +41,13 @@ function AuthProvider({ children }) {
   };
 
   // sign out
-  const logoutUser = () => {
-    setLoading(true)
-    return signOut(auth)
-
-  }
+  const logoutUser = async () => {
+    setLoading(true);
+    await axios(`${import.meta.env.VITE_API_URL}/logout`, {
+      withCredentials: true,
+    });
+    return signOut(auth);
+  };
   //Observer
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
@@ -66,7 +69,7 @@ function AuthProvider({ children }) {
     logoutUser,
     loading,
     user,
-    setUser
+    setUser,
   };
   return (
     <div>

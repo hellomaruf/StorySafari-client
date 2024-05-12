@@ -1,12 +1,18 @@
 import { Rate } from "antd";
+import { useState } from "react";
 import { Link, useLoaderData } from "react-router-dom";
 
 function AllBooksCard() {
   const books = useLoaderData();
+  const [filteredBooks, setFilteredBooks] = useState(books);
+  const handleAvailable = () => {
+    const available = filteredBooks.filter((book) => book.quantity > 0);
+    setFilteredBooks(available);
+  };
 
   return (
     <div className="max-w-7xl mx-auto my-16">
-      <div className="flex mb-12 ">
+      <div className="flex items-center justify-between mb-12 ">
         <div className="dropdown dropdown-right dropdown-hover">
           <div tabIndex={0} role="button" className="mr-3">
             <a
@@ -60,9 +66,17 @@ function AllBooksCard() {
             </li>
           </ul>
         </div>
+        <div className="">
+          <button
+            onClick={handleAvailable}
+            className="btn border-2 bg-transparent border-[#A91D3A] text-[#A91D3A] hover:border-[#A91D3A]"
+          >
+            <i className="ri-filter-line"></i>Available Books
+          </button>
+        </div>
       </div>
       <div className="grid grid-cols-4 gap-5  my-12">
-        {books.map((book, index) => (
+        {filteredBooks.map((book, index) => (
           <div key={index}>
             <a href="#" className="group relative block overflow-hidden">
               <button className="absolute end-4 top-4 z-10 rounded-full bg-white p-1.5 text-gray-900 transition hover:text-gray-900/75">

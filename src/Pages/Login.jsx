@@ -7,6 +7,7 @@ import Lottie from "react-lottie";
 import { AuthContext } from "../Services/AuthProvider";
 import Swal from "sweetalert2";
 import toast from "react-hot-toast";
+import axios from "axios";
 function Login() {
   const [showPassword, setShowPassword] = useState(false);
   const { signInUser, googleLogin, githubLogin } = useContext(AuthContext);
@@ -15,7 +16,14 @@ function Login() {
   const from = location.state || "/";
   const handleGithubLogin = () => {
     githubLogin()
-      .then((res) => {
+      .then(async (res) => {
+        await axios.post(
+          `${import.meta.env.VITE_API_URL}/jwt`,
+          {
+            email: res?.user?.email,
+          },
+          { withCredentials: true }
+        );
         navigate(from);
         if (res.user) {
           Swal.fire({
@@ -34,9 +42,15 @@ function Login() {
   };
   const handleGoogleLogin = () => {
     googleLogin()
-      .then((res) => {
+      .then(async (res) => {
+        await axios.post(
+          `${import.meta.env.VITE_API_URL}/jwt`,
+          {
+            email: res?.user?.email,
+          },
+          { withCredentials: true }
+        );
         navigate(from);
-
         if (res.user) {
           Swal.fire({
             confirmButtonColor: "#A91D3A",
@@ -58,7 +72,15 @@ function Login() {
     const email = form.email.value;
     const password = form.password.value;
     signInUser(email, password)
-      .then((res) => {
+      .then(async (res) => {
+        await axios.post(
+          `${import.meta.env.VITE_API_URL}/jwt`,
+          {
+            email: res?.user?.email,
+          },
+          { withCredentials: true }
+        );
+
         navigate(from);
         if (res.user) {
           Swal.fire({
