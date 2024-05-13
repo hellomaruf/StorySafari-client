@@ -8,7 +8,7 @@ function UpdateBooks() {
   const { user } = useContext(AuthContext);
   const book = useLoaderData();
   console.log(book);
-  const {_id, category_name, book_name, rating, photo } = book;
+  const { _id, category_name, book_name, rating, photo } = book;
   const handleAddBooks = (e) => {
     e.preventDefault();
     const form = e.target;
@@ -18,8 +18,8 @@ function UpdateBooks() {
     const author_Name = form.authName.value;
     const photo = form.photo.value;
 
-      const booksInfo = {
-        _id,
+    const booksInfo = {
+      _id,
       category_name,
       book_name,
       rating,
@@ -50,6 +50,7 @@ function UpdateBooks() {
     <div>
       <div className="">
         <div className="text-center py-10 pb-36 bg-gradient-to-r from-[#710d21] to-[#A91D3A] text-white">
+          <div className="mx-6">
           <h2 className="font-right text-3xl font-semibold">Update Books</h2>
           <p className="py-2 max-w-2xl mx-auto">
             Both reading and writing are experiences – lifelong – in the course
@@ -57,104 +58,107 @@ function UpdateBooks() {
             by them to be brought mind and heart within the presence, the power,
             of the imagination
           </p>
+         </div>
         </div>
-        <div className=" max-w-7xl mx-auto relative -top-28">
-          <form
-            onSubmit={handleAddBooks}
-            noValidate=""
-            action=""
-            className="container flex flex-col mx-auto space-y-12"
-          >
-            <fieldset className="grid grid-cols-4 gap-6 p-6 rounded-2xl shadow-sm  border-2 bg-gray-50 border-[#A91D3A]">
-              <div className="grid grid-cols-6 gap-4 col-span-full ">
-                <div className="col-span-full sm:col-span-3">
-                  <label htmlFor="firstname" className="text-lg font-medium">
-                    Category Name
-                  </label>
-                  <select
-                    defaultValue={category_name}
-                    className="w-full rounded-md focus:bg-[#ffe7ec]  p-2 outline-none border"
-                    name="cateName"
-                    id="cars"
-                  >
-                    <option value="Novel">Novel</option>
-                    <option value="Biographies">Biographies</option>
-                    <option value="Comics">Comics</option>
-                    <option value="Entertainment">Entertainment</option>
-                    <option value="Health">Health</option>
-                    <option value="Cookbooks">Cookbooks</option>
-                    <option value="Travel">Travel</option>
-                    <option value="History">History</option>
-                  </select>
-                </div>
-                <div className="col-span-full sm:col-span-3">
-                  <label htmlFor="lastname" className="text-lg font-medium">
-                    Book Name
-                  </label>
-                  <input
-                    defaultValue={book_name}
-                    required
-                    name="bookName"
-                    type="text"
-                    placeholder="Enter Book Name"
-                    className="w-full border-2 focus:bg-[#ffe7ec] rounded-md p-2 outline-none  "
-                  />
-                </div>
-              </div>
-
-              <div className="col-span-full ">
-                <label htmlFor="firstname" className="text-lg font-medium">
-                  Rating
-                </label>
-                <input
-                  required
-                  defaultValue={rating}
-                  name="rating"
-                  type="number"
-                  placeholder="Enter Rating"
-                  className="w-full focus:bg-[#ffe7ec] rounded-md  p-2 outline-none border"
-                />
-              </div>
-
-              <div className="grid grid-cols-6 gap-4 col-span-full ">
-                <div className="col-span-full ">
-                  <label htmlFor="firstname" className="text-lg font-medium">
-                    Author Name
-                  </label>
-                  <input
-                    required
-                    defaultValue={user?.displayName}
-                    name="authName"
-                    type="text"
-                    placeholder="Enter Your Name"
-                    className="w-full focus:bg-[#ffe7ec] rounded-md  p-2 outline-none border"
-                  />
+        <div className="mx-2">
+          <div className=" max-w-7xl mx-auto relative -top-28">
+            <form
+              onSubmit={handleAddBooks}
+              noValidate=""
+              action=""
+              className="container flex flex-col mx-auto space-y-12"
+            >
+              <fieldset className="grid grid-cols-4 gap-6 p-6 rounded-2xl shadow-sm  border-2 bg-base-100 border-[#A91D3A]">
+                <div className="grid grid-cols-6 gap-4 col-span-full ">
+                  <div className="col-span-full sm:col-span-3">
+                    <label htmlFor="firstname" className="text-lg font-medium">
+                      Category Name
+                    </label>
+                    <select
+                      defaultValue={category_name}
+                      className="w-full rounded-md focus:border-[#A91D3A]  p-2 outline-none border"
+                      name="cateName"
+                      id="cars"
+                    >
+                      <option value="Novel">Novel</option>
+                      <option value="Biographies">Biographies</option>
+                      <option value="Comics">Comics</option>
+                      <option value="Entertainment">Entertainment</option>
+                      <option value="Health">Health</option>
+                      <option value="Cookbooks">Cookbooks</option>
+                      <option value="Travel">Travel</option>
+                      <option value="History">History</option>
+                    </select>
+                  </div>
+                  <div className="col-span-full sm:col-span-3">
+                    <label htmlFor="lastname" className="text-lg font-medium">
+                      Book Name
+                    </label>
+                    <input
+                      defaultValue={book_name}
+                      required
+                      name="bookName"
+                      type="text"
+                      placeholder="Enter Book Name"
+                      className="w-full border focus:border-[#A91D3A] rounded-md p-2 outline-none  "
+                    />
+                  </div>
                 </div>
 
                 <div className="col-span-full ">
                   <label htmlFor="firstname" className="text-lg font-medium">
-                    Photo
+                    Rating
                   </label>
                   <input
                     required
-                    defaultValue={photo}
-                    name="photo"
-                    type="text"
-                    placeholder="Enter Photo URL"
-                    className="w-full focus:bg-[#ffe7ec] rounded-md  p-2 outline-none border"
+                    defaultValue={rating}
+                    name="rating"
+                    type="number"
+                    placeholder="Enter Rating"
+                    className="w-full focus:border-[#A91D3A] rounded-md  p-2 outline-none border"
                   />
                 </div>
 
-                <div className="">
-                  <input
-                    className="bg-[#A91D3A] hover:bg-[#cf3a58] btn text-white   py-2 font-bold  rounded-lg"
-                    type="submit"
-                    value="Update Book"
-                  />
+                <div className="grid grid-cols-6 gap-4 col-span-full ">
+                  <div className="col-span-full ">
+                    <label htmlFor="firstname" className="text-lg font-medium">
+                      Author Name
+                    </label>
+                    <input
+                      required
+                      defaultValue={user?.displayName}
+                      name="authName"
+                      type="text"
+                      placeholder="Enter Your Name"
+                      className="w-full focus:border-[#A91D3A] rounded-md  p-2 outline-none border"
+                    />
+                  </div>
+
+                  <div className="col-span-full ">
+                    <label htmlFor="firstname" className="text-lg font-medium">
+                      Photo
+                    </label>
+                    <input
+                      required
+                      defaultValue={photo}
+                      name="photo"
+                      type="text"
+                      placeholder="Enter Photo URL"
+                      className="w-full focus:border-[#A91D3A] rounded-md  p-2 outline-none border"
+                    />
+                  </div>
+
+                  <div className="">
+                    <input
+                      className="bg-[#A91D3A] hover:bg-[#cf3a58] btn text-white   py-2 font-bold  rounded-lg"
+                      type="submit"
+                      value="Update Book"
+                    />
+                  </div>
                 </div>
-              </div>
-            </fieldset>
-          </form>
+              </fieldset>
+            </form>
+          </div>
         </div>
       </div>
     </div>

@@ -104,7 +104,7 @@ function Login() {
   };
   return (
     <div className="max-w-7xl mx-auto">
-      <div className="grid grid-cols-1 lg:grid-cols-2 mx-6 lg:mx-3 gap-12 my-20 items-center  ">
+      <div className="grid grid-cols-1 lg:grid-cols-2 mx-6 lg:mx-3 gap-12 my-10 lg:my-20 items-center  ">
         <div className="col-span-1">
           <div data-aos="fade-left" data-aos-duration="900" className="">
             <div className=" space-y-2 text-center">

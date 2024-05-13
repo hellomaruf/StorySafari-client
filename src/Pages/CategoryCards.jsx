@@ -8,10 +8,10 @@ function CategoryCards() {
   console.log(books);
   return (
     <div className="max-w-7xl mx-auto ">
-      <h2 className="text-2xl font-semibold py-6">
+      <h2 className="text-xl lg:text-2xl mx-6 lg:mx-0 font-semibold py-6">
         This category has {books.length} items
       </h2>
-      <div className=" grid grid-cols-4 gap-5 ">
+      <div className=" grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 mx-6 lg:mx-0 gap-5 ">
         {books.map((book, index) => (
           <div key={index} className="card bg-base-200 shadow-md">
             <figure className="p-4 relative">

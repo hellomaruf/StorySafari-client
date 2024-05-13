@@ -73,7 +73,7 @@ function BookDetails() {
   };
   return (
     <div className="max-w-7xl mx-auto">
-      <div className="grid grid-cols-1 lg:grid-cols-2 items-center   mx-6 lg:mx-3">
+      <div className="grid grid-cols-1 lg:grid-cols-2 items-center  mx-6 lg:mx-3">
         <div className="col-span-1 lg:p-10 ">
           <img className=" rounded-xl" src={photo} alt="" />
         </div>
@@ -101,7 +101,7 @@ function BookDetails() {
               Quantity : {quantity} pis
             </h2>
             <div className="flex items-center justify-center gap-4">
-              <div className="space-y-4 max-w-96  bg-gradient-to-b from-[#A91D3A] to-[#560d1c] p-5 rounded-xl text-white my-5">
+              <div className="space-y-4 max-w-96 bg-gradient-to-b from-[#A91D3A] to-[#560d1c] p-5 rounded-xl text-white my-5">
                 <div className="flex justify-between items-center">
                   <div className="text-gray-900 bg-white py-1 px-3 rounded-full font-semibold">
                     Limited Supply
@@ -116,7 +116,7 @@ function BookDetails() {
                   Their scarcity adds to their allure
                 </div>
               </div>
-              <div className="p-8  rounded-xl">
+              <div className="p-8 hidden lg:block rounded-xl">
                 <img className="rounded-xl" src={photo} alt="" />
               </div>
             </div>

@@ -52,6 +52,7 @@ function AddBooks() {
     <div>
       <div className="">
         <div className="text-center py-10 pb-36 bg-gradient-to-r from-[#710d21] to-[#A91D3A] text-white">
+          <div className="mx-6">
           <h2 className="font-right text-3xl font-semibold">Add Books</h2>
           <p className="py-2 max-w-2xl mx-auto">
             Both reading and writing are experiences – lifelong – in the course
@@ -59,6 +60,7 @@ function AddBooks() {
             by them to be brought mind and heart within the presence, the power,
             of the imagination
           </p>
+         </div>
         </div>
         <div className="mx-2">
           <div className=" max-w-7xl mx-auto relative -top-28">
