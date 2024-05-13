@@ -21,7 +21,10 @@ export const router = createBrowserRouter([
       {
         path: "/",
         element: <Home />,
-        loader: () => fetch(`${import.meta.env.VITE_API_URL}/books`),
+        loader: () =>
+          fetch(`${import.meta.env.VITE_API_URL}/books`, {
+            credentials: "include",
+          }),
       },
       {
         path: "/login",
@@ -43,7 +46,9 @@ export const router = createBrowserRouter([
         path: "/category/:name",
         element: <CategoryCards />,
         loader: ({ params }) =>
-          fetch(`${import.meta.env.VITE_API_URL}/books/${params.name}`),
+          fetch(`${import.meta.env.VITE_API_URL}/books/${params.name}`, {
+            credentials: "include",
+          }),
       },
       {
         path: "/bookDetails/:id",

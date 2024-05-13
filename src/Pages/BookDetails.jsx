@@ -40,7 +40,7 @@ function BookDetails() {
       quantity,
       book_id: _id,
     };
-    console.log(borrowInfo);
+
 
     axios
       .post(`${import.meta.env.VITE_API_URL}/borrow`, borrowInfo)

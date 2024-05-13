@@ -28,7 +28,9 @@ function AddBooks() {
     };
 
     axios
-      .post(`${import.meta.env.VITE_API_URL}/books`, booksInfo)
+      .post(`${import.meta.env.VITE_API_URL}/books`, booksInfo, {
+        withCredentials: true,
+      })
       .then((res) => {
         console.log(res.data);
 
