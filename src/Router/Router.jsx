@@ -12,6 +12,9 @@ import BorrowedBooks from "../Pages/BorrowedBooks";
 import AllBooksTable from "../Pages/AllBooksTable";
 import AllBooksCard from "../Pages/AllBooksCard";
 import UpdateBooks from "../Pages/UpdateBooks";
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+AOS.init();
 export const router = createBrowserRouter([
   {
     path: "/",
