@@ -93,7 +93,7 @@ function Nav() {
                 {link}
               </ul>
             </div>
-            <div className="flex items-center gap-2">
+            <div className="md:flex hidden  items-center gap-2">
               <img src={logo} className="w-10" alt="" />
               <h2 className="font-bold text-3xl">
                 Story<span className="font-light text-[#A91D3A]">Safari</span>

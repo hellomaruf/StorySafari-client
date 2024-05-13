@@ -17,14 +17,14 @@ function BooksCategory({ books }) {
     <div>
       <div className="max-w-7xl mx-auto space-y-16 py-10">
         <Slide direction="down">
-          <div className="text-center">
-            <h2 className="text-4xl font-semibold pb-4">Books Category</h2>
+          <div className="text-center mx-6">
+            <h2 className="text-3xl lg:text-4xl font-semibold pb-4">Books Category</h2>
             <p className="max-w-3xl mx-auto">
               Without libraries what have we? We have no past and no future
             </p>
           </div>
         </Slide>
-        <div  data-aos="fade-up" className="grid grid-cols-4 items-center justify-center gap-6">
+        <div  data-aos="fade-up" className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 mx-6 items-center justify-center gap-6">
        
             <Link
               to="/category/Novel"
@@ -242,8 +242,8 @@ function BooksCategory({ books }) {
                   <div className="mt-32 sm:mt-48 lg:mt-64">
                     <div className=" translate-y-8 transform opacity-0 transition-all group-hover:translate-y-0 group-hover:opacity-100">
                       <p className="text-sm text-white">
-                        Laughter echoes, drama unfolds, spectacles mesmerize,
-                        joy shared
+                        Laughter echoes, drama unfolds, spectacles mesmerize
+                       
                       </p>
                     </div>
                   </div>

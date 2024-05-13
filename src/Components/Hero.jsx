@@ -8,17 +8,17 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Pagination, Navigation } from "swiper/modules";
 // Import Swiper styles
 import "swiper/css";
-import {Slide } from "react-awesome-reveal";
+import { Slide } from "react-awesome-reveal";
 
 // import "./styles.css";
 function Hero() {
   return (
     <div className="max-w-7xl mx-auto">
-      <div className="grid grid-cols-2 items-center gap-6 my-24">
-        <div className="col-span-1 ">
+      <div className="grid grid-cols-1 lg:grid-cols-2 mx-6 items-center gap-6 lg:gap-9 my-16 lg:my-24">
+        <div className="col-span-1 text-center lg:text-left">
           <div className="space-y-6">
             <Slide damping={0.1} cascade>
-              <h1 className="text-5xl font-bold font-poppins">
+              <h1 className="text-4xl lg:text-5xl font-bold font-poppins">
                 Books are mirrors You only see in them what you already have
                 inside you.
               </h1>
@@ -30,27 +30,29 @@ function Hero() {
               <button className="btn  text-white bg-[#A91D3A]">
                 Learn More
               </button>
-              <div className="bg-base-100 border-2 border-[#A91D3A] flex flex-col items-center justify-center rounded-lg  w-60 p-6">
-                <div className="pb-2 font-medium">12k+ People Joined</div>
-                <div className="avatar-group  -space-x-6 rtl:space-x-reverse">
-                  <div className="avatar">
-                    <div className="w-12">
-                      <img src={img} />
+              <div className="flex  lg:block items-center justify-center">
+                <div className="bg-base-100 border-2 border-[#A91D3A] flex flex-col items-center justify-center rounded-lg  w-60 p-6">
+                  <div className="pb-2 font-medium">12k+ People Joined</div>
+                  <div className="avatar-group  -space-x-6 rtl:space-x-reverse">
+                    <div className="avatar">
+                      <div className="w-12">
+                        <img src={img} />
+                      </div>
                     </div>
-                  </div>
-                  <div className="avatar">
-                    <div className="w-12">
-                      <img src={img2} />
+                    <div className="avatar">
+                      <div className="w-12">
+                        <img src={img2} />
+                      </div>
                     </div>
-                  </div>
-                  <div className="avatar">
-                    <div className="w-12">
-                      <img src={img3} />
+                    <div className="avatar">
+                      <div className="w-12">
+                        <img src={img3} />
+                      </div>
                     </div>
-                  </div>
-                  <div className="avatar placeholder">
-                    <div className="w-12 bg-[#A91D3A] text-neutral-content">
-                      <span>+12k</span>
+                    <div className="avatar placeholder">
+                      <div className="w-12 bg-[#A91D3A] text-neutral-content">
+                        <span>+12k</span>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -69,17 +71,17 @@ function Hero() {
               className="mySwiper"
             >
               <SwiperSlide>
-                <div className="px-16">
+                <div className="">
                   <img src={heroBook} alt="" />
                 </div>
               </SwiperSlide>
               <SwiperSlide>
-                <div className="px-16">
+                <div className="">
                   <img src={heroBook1} alt="" />
                 </div>
               </SwiperSlide>
               <SwiperSlide>
-                <div className="px-16">
+                <div className="">
                   <img src={heroBook3} alt="" />
                 </div>
               </SwiperSlide>

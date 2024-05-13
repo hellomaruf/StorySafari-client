@@ -3,15 +3,15 @@ import img from "../assets/images/about.png";
 function About() {
   return (
     <div className="max-w-7xl mx-auto py-20">
-      <div className="grid grid-cols-2 gap-2 items-center ">
+      <div className="grid grid-cols-1 lg:grid-cols-2 mx-6 gap-8 items-center ">
         <Slide direction="left">
           <div className="col-span-1">
             <img src={img} alt="" />
           </div>
         </Slide>
-          <Slide direction="right" >
-        <div className="col-span-1 pl-10 space-y-5">
-            <h1 className="text-4xl font-semibold">About Our Library</h1>
+        <Slide direction="right">
+          <div className="col-span-1 lg:pl-10 space-y-5">
+            <h1 className="text-3xl lg:text-4xl  font-semibold">About Our Library</h1>
             <p>
               The library is a place of exploration, where one can lose
               themselves in the vast expanse of human thought and imagination.
@@ -27,8 +27,8 @@ function About() {
             <button className="bg-[#A91D3A] hover:bg-[#cf3a58] btn text-white ">
               Read More
             </button>
-        </div>
-          </Slide>
+          </div>
+        </Slide>
       </div>
     </div>
   );
