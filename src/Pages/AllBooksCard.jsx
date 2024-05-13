@@ -11,8 +11,8 @@ function AllBooksCard() {
   };
 
   return (
-    <div className="max-w-7xl mx-auto my-16">
-      <div className="flex items-center justify-between mb-12 ">
+    <div className="max-w-7xl mx-auto my-10 lg:my-16">
+      <div className="flex items-center justify-between mb-12 mx-6  lg:mx-0">
         <div className="dropdown dropdown-right dropdown-hover">
           <div tabIndex={0} role="button" className="mr-3">
             <a
@@ -75,7 +75,7 @@ function AllBooksCard() {
           </button>
         </div>
       </div>
-      <div className="grid grid-cols-4 gap-5  my-12">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 mx-6 lg:mx-0 gap-5  my-12">
         {filteredBooks.map((book, index) => (
           <div key={index}>
             <a href="#" className="group relative block overflow-hidden">

@@ -81,11 +81,11 @@ function AllBooksTable() {
           {/* head */}
           <thead>
             <tr>
-              <th className="text-base text-[#A91D3A]"></th>
+              <th className="text-base text-[#A91D3A]">Photo</th>
               <th className="text-base text-[#A91D3A]">Book Name</th>
-              <th className="text-base text-[#A91D3A]">Category</th>
+              <th className="text-base text-[#A91D3A] hidden lg:block">Category</th>
               <th className="text-base text-[#A91D3A]">Author Name</th>
-              <th className="text-base text-[#A91D3A]">Rating</th>
+              <th className="text-base text-[#A91D3A] hidden lg:block">Rating</th>
               <th></th>
             </tr>
           </thead>
@@ -108,9 +108,9 @@ function AllBooksTable() {
                   {book?.book_name}
                   <br />
                 </td>
-                <td> {book?.category_name}</td>
-                <td>{book?.author_Name}</td>
-                <td>
+                <td className="hidden lg:flex"> {book?.category_name}</td>
+                <td className="">{book?.author_Name}</td>
+                <td className="hidden lg:flex">
                   <Rate defaultValue={book?.rating} />
                 </td>
                 <th>

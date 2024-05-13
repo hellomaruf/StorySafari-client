@@ -71,17 +71,17 @@ function Hero() {
               className="mySwiper"
             >
               <SwiperSlide>
-                <div className="">
+                <div className="px-2">
                   <img src={heroBook} alt="" />
                 </div>
               </SwiperSlide>
               <SwiperSlide>
-                <div className="">
+                <div className="px-2">
                   <img src={heroBook1} alt="" />
                 </div>
               </SwiperSlide>
               <SwiperSlide>
-                <div className="">
+                <div className="px-2">
                   <img src={heroBook3} alt="" />
                 </div>
               </SwiperSlide>
