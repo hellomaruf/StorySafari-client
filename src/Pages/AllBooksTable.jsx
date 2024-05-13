@@ -81,7 +81,7 @@ function AllBooksTable() {
           {/* head */}
           <thead>
             <tr>
-              <th className="text-base text-[#A91D3A]">Photo</th>
+              <th className="text-base text-[#A91D3A]"></th>
               <th className="text-base text-[#A91D3A]">Book Name</th>
               <th className="text-base text-[#A91D3A]">Category</th>
               <th className="text-base text-[#A91D3A]">Author Name</th>

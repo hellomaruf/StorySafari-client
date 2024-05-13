@@ -104,17 +104,17 @@ function AllBooksCard() {
                 className="h-64 rounded-xl w-full object-cover transition duration-500 group-hover:scale-105 sm:h-72"
               />
 
-              <div className="relative  bg-white py-5">
+              <div className="relative  py-5">
                 <div className="flex justify-between">
-                  <h3 className="bg-orange-100 py-1 px-3 rounded-full font-medium">
+                  <h3 className="bg-orange-100 text-gray-900 py-1 px-3 rounded-full font-medium">
                     {book?.category_name}
                   </h3>
                 </div>
-                <h3 className="mt-2 text-lg font-medium text-gray-900">
+                <h3 className="mt-2 text-lg font-medium ">
                   {book?.book_name}
                 </h3>
 
-                <p className="mt-1.5 text-sm text-gray-700">
+                <p className="mt-1.5 text-sm ">
                   Author : {book?.author_Name}
                 </p>
 

@@ -1,4 +1,4 @@
-import { useContext} from "react";
+import { useContext } from "react";
 import { AuthContext } from "../Services/AuthProvider";
 import axios from "axios";
 import Swal from "sweetalert2";
@@ -31,7 +31,7 @@ function AddBooks() {
       .post(`${import.meta.env.VITE_API_URL}/books`, booksInfo)
       .then((res) => {
         console.log(res.data);
-     
+
         if (res.data) {
           Swal.fire({
             confirmButtonColor: "#A91D3A",
@@ -65,14 +65,14 @@ function AddBooks() {
             action=""
             className="container flex flex-col mx-auto space-y-12"
           >
-            <fieldset className="grid grid-cols-4 gap-6 p-6 rounded-2xl shadow-sm  border-2 bg-gray-50 border-[#A91D3A]">
+            <fieldset className="grid grid-cols-4 gap-6 p-6 rounded-2xl shadow-sm  border-2 bg-base-100 border-[#A91D3A]">
               <div className="grid grid-cols-6 gap-4 col-span-full ">
                 <div className="col-span-full sm:col-span-3">
                   <label htmlFor="firstname" className="text-lg font-medium">
                     Category Name
                   </label>
                   <select
-                    className="w-full rounded-md focus:bg-[#ffe7ec]  p-2 outline-none border"
+                    className="w-full rounded-md focus:bg-base-200  p-2 outline-none border"
                     name="cateName"
                     id="cars"
                   >
@@ -95,7 +95,7 @@ function AddBooks() {
                     name="bookName"
                     type="text"
                     placeholder="Enter Book Name"
-                    className="w-full border-2 focus:bg-[#ffe7ec] rounded-md p-2 outline-none  "
+                    className="w-full border focus:bg-base-200 focus:border-[#A91D3A]  rounded-md p-2 outline-none  "
                   />
                 </div>
               </div>
@@ -109,7 +109,7 @@ function AddBooks() {
                     name="quantity"
                     type="number"
                     placeholder="Enter Quantity"
-                    className="w-full focus:bg-[#ffe7ec] rounded-md  p-2 outline-none border"
+                    className="w-full focus:bg-base-200 focus:border-[#A91D3A]  rounded-md  p-2 outline-none border"
                   />
                 </div>
                 <div className="col-span-full sm:col-span-3">
@@ -121,7 +121,7 @@ function AddBooks() {
                     name="rating"
                     type="number"
                     placeholder="Enter Rating"
-                    className="w-full focus:bg-[#ffe7ec] rounded-md p-2 outline-none border "
+                    className="w-full focus:bg-base-200 focus:border-[#A91D3A] rounded-md p-2 outline-none border "
                   />
                 </div>
               </div>
@@ -138,7 +138,7 @@ function AddBooks() {
                     name="authName"
                     type="text"
                     placeholder="Enter Your Name"
-                    className="w-full focus:bg-[#ffe7ec] rounded-md  p-2 outline-none border"
+                    className="w-full focus:bg-base-200 focus:border-[#A91D3A] rounded-md  p-2 outline-none border"
                   />
                 </div>
 
@@ -151,7 +151,7 @@ function AddBooks() {
                     name="photo"
                     type="text"
                     placeholder="Enter Photo URL"
-                    className="w-full focus:bg-[#ffe7ec] rounded-md  p-2 outline-none border"
+                    className="w-full focus:bg-base-200 focus:border-[#A91D3A] rounded-md  p-2 outline-none border"
                   />
                   <div className=" mt-5">
                     <label htmlFor="firstname" className="text-lg font-medium">
@@ -162,7 +162,7 @@ function AddBooks() {
                       name="description"
                       type="text"
                       placeholder="Enter a Short Description"
-                      className="w-full focus:bg-[#ffe7ec] rounded-md  p-2 outline-none border"
+                      className="w-full focus:bg-base-200 focus:border-[#A91D3A] rounded-md  p-2 outline-none border"
                     />
                   </div>
                 </div>

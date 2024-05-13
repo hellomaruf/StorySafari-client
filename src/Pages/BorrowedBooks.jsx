@@ -10,17 +10,22 @@ function BorrowedBooks() {
   const [borrowedBooks, setBorrowedBooks] = useState([]);
   const [displayBooks, setDisplayBooks] = useState([]);
   useEffect(() => {
-    fetch(`${import.meta.env.VITE_API_URL}/borrowed/${user?.email}`)
-      .then((res) => res.json())
-      .then((data) => {
-        setBorrowedBooks(data);
-        setDisplayBooks(data);
-      });
+    if (user?.email)
+      fetch(`${import.meta.env.VITE_API_URL}/borrowed/${user?.email}`, {
+        credentials: "include",
+      })
+        .then((res) => res.json())
+        .then((data) => {
+          setBorrowedBooks(data);
+          setDisplayBooks(data);
+        });
   }, [user]);
 
   const handleReturn = (book_id, quantity, borrow_id) => {
     axios
-      .patch(`${import.meta.env.VITE_API_URL}/return/${book_id}`, quantity)
+      .patch(`${import.meta.env.VITE_API_URL}/return/${book_id}`, quantity, {
+        withCredentials: true,
+      })
       .then((res) => {
         console.log(res.data);
         if (res.data) {
@@ -38,7 +43,9 @@ function BorrowedBooks() {
       });
 
     axios
-      .delete(`${import.meta.env.VITE_API_URL}/borrowedBook/${borrow_id}`)
+      .delete(`${import.meta.env.VITE_API_URL}/borrowedBook/${borrow_id}`, {
+        withCredentials: true,
+      })
       .then((res) => {
         console.log(res.data);
 
@@ -59,7 +66,7 @@ function BorrowedBooks() {
         You borrowed {borrowedBooks.length} books
       </h2>
       <div className="grid grid-cols-4 gap-5">
-        {displayBooks.map((book, index) => (
+        {displayBooks?.map((book, index) => (
           <div key={index} className="card bg-base-100 shadow-xl">
             <figure className="p-4 relative">
               <img src={book?.photo} alt="Shoes" className="rounded-xl" />
@@ -72,13 +79,13 @@ function BorrowedBooks() {
               <div className="py-3">
                 <p className="">
                   Borrowed Date :{" "}
-                  <span className="bg-orange-100 rounded-full py-1 px-3 text-sm font-bold">
+                  <span className="bg-orange-100 text-gray-900 rounded-full py-1 px-3 text-sm font-bold">
                     {book?.current_date}
                   </span>
                 </p>
                 <p className="pt-2">
                   Return Date :{" "}
-                  <span className="bg-orange-100 rounded-full py-1 px-3 text-sm font-bold">
+                  <span className="bg-orange-100 text-gray-900 rounded-full py-1 px-3 text-sm font-bold">
                     {book?.return_date}
                   </span>
                 </p>

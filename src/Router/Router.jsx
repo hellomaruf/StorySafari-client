@@ -53,7 +53,9 @@ export const router = createBrowserRouter([
           </PrivateRoute>
         ),
         loader: ({ params }) =>
-          fetch(`${import.meta.env.VITE_API_URL}/book/${params.id}`),
+          fetch(`${import.meta.env.VITE_API_URL}/book/${params.id}`, {
+            credentials: "include",
+          }),
       },
       {
         path: "/borrowedBooks/:email",
@@ -63,7 +65,9 @@ export const router = createBrowserRouter([
           </PrivateRoute>
         ),
         loader: ({ params }) =>
-          fetch(`${import.meta.env.VITE_API_URL}/borrowed/${params.email}`),
+          fetch(`${import.meta.env.VITE_API_URL}/borrowed/${params?.email}`, {
+            credentials: "include",
+          }),
       },
       {
         path: "/allBooksTable",
@@ -72,7 +76,10 @@ export const router = createBrowserRouter([
             <AllBooksTable />
           </PrivateRoute>
         ),
-        loader: () => fetch(`${import.meta.env.VITE_API_URL}/books`),
+        loader: () =>
+          fetch(`${import.meta.env.VITE_API_URL}/books`, {
+            credentials: "include",
+          }),
       },
       {
         path: "/allBooksCard",
@@ -81,7 +88,10 @@ export const router = createBrowserRouter([
             <AllBooksCard />
           </PrivateRoute>
         ),
-        loader: () => fetch(`${import.meta.env.VITE_API_URL}/books`),
+        loader: () =>
+          fetch(`${import.meta.env.VITE_API_URL}/books`, {
+            credentials: "include",
+          }),
       },
       {
         path: "/updateBooks/:id",
@@ -91,7 +101,9 @@ export const router = createBrowserRouter([
           </PrivateRoute>
         ),
         loader: ({ params }) =>
-          fetch(`${import.meta.env.VITE_API_URL}/update/${params.id}`),
+          fetch(`${import.meta.env.VITE_API_URL}/update/${params.id}`, {
+            credentials: "include",
+          }),
       },
     ],
   },

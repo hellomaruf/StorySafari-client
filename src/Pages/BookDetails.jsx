@@ -80,7 +80,7 @@ function BookDetails() {
         <div className="col-span-1 py-10 ">
           <div className=" flex mb-3"></div>
           <div className="flex items-center gap-4">
-            <h1 className="text-xl font-medium bg-orange-100 text- py-1 px-3 rounded-full">
+            <h1 className="text-xl font-medium bg-orange-100 text-gray-900 text- py-1 px-3 rounded-full">
               {category_name}
             </h1>
             <h2 className="flex items-center justify-center gap-1">

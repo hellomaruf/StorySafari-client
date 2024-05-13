@@ -22,7 +22,7 @@ function Nav() {
       setTheme("lemonade");
     }
   };
-  console.log(theme);
+
   const link = (
     <>
       <NavLink
