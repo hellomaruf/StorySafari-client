@@ -1,12 +1,12 @@
 import logo from "../assets/images/logo.png";
-import footer from "../assets/images/footer2.svg";
+// import footer from "../assets/images/footer2.svg";
 function Footer() {
   return (
     <div>
       <div className="pt-10">
         <div
           style={{
-            backgroundImage: `url('${footer}')`,
+            backgroundImage: `url('https://i.postimg.cc/X7dfSvwP/Screenshot-2024-05-14-163033.png')`,
           }}
           className="bg-[#e8e8e8] z-10 w-full bg-cover"
         >

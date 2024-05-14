@@ -8,14 +8,14 @@ import img5 from "../assets/images/reco5.png";
 import img6 from "../assets/images/reco6.png";
 import img7 from "../assets/images/reco7.png";
 import Marquee from "react-fast-marquee";
-import footer from "../assets/images/recoBg1.svg";
+// import footer from "../assets/images/recoBg1.svg";
 
 function Recomended() {
   return (
     <div className="max-w-7xl  mx-auto py-20 gap-8">
       <div
         style={{
-          backgroundImage: `url(${footer})`,
+          backgroundImage: `url('https://i.postimg.cc/NfgwHdgf/Screenshot-2024-05-14-164302.png')`,
         }}
         className="p-10 bg-cover grid grid-cols-1 md:grid-cols-2 items-center justify-center gap-8 lg:rounded-xl shadow-md bg-[#A91D3A] text-gray-50 space-y-5"
       >

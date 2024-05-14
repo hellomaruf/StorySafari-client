@@ -13,7 +13,7 @@ function AllBooksTable() {
   return (
     <div className="max-w-7xl mx-auto my-16">
       <div className="overflow-x-auto">
-        <div className="flex items-center justify-between mb-12 ">
+        <div className="flex items-center justify-between mb-12 mx-6 lg:mx-0">
           <div className="dropdown dropdown-right dropdown-hover">
             <div tabIndex={0} role="button" className="mr-3">
               <a
@@ -79,17 +79,21 @@ function AllBooksTable() {
 
         <table className="table">
           {/* head */}
-          <thead>
+          {/* <thead>
             <tr>
               <th className="text-base text-[#A91D3A]">Photo</th>
               <th className="text-base text-[#A91D3A]">Book Name</th>
-              <th className="text-base text-[#A91D3A] hidden lg:block">Category</th>
+              <th className="text-base text-[#A91D3A] hidden lg:block">
+                Category
+              </th>
               <th className="text-base text-[#A91D3A]">Author Name</th>
-              <th className="text-base text-[#A91D3A] hidden lg:block">Rating</th>
+              <th className="text-base text-[#A91D3A] hidden lg:block">
+                Rating
+              </th>
               <th></th>
             </tr>
-          </thead>
-          <tbody>
+          </thead> */}
+          {/* <tbody>
             {filteredBooks.map((book, index) => (
               <tr className="hover rounded-xl" key={index}>
                 <td>
@@ -123,8 +127,59 @@ function AllBooksTable() {
                 </th>
               </tr>
             ))}
-          </tbody>
+          </tbody> */}
         </table>
+
+        <div className="overflow-x-auto">
+          <table className="table table-xs">
+            <thead className="">
+              <tr>
+                <th className="text-base text-[#A91D3A]"></th>
+                <th className="text-base text-[#A91D3A]">Book Name</th>
+                <th className="hidden lg:block text-base text-[#A91D3A]">Author Name</th>
+                <th className="text-base text-[#A91D3A]">Category</th>
+                <th className="hidden lg:block text-base text-[#A91D3A]">Rating</th>
+             
+              </tr>
+            </thead>
+            {filteredBooks.map((book, index) => (
+              <tbody key={index}>
+                <tr>
+                  <th>
+                    {" "}
+                    <div className="flex items-center gap-3">
+                      <div className="avatar">
+                        <div className="mask rounded-lg w-12 lg:w-16 h-16 lg:h-20">
+                          <img
+                            src={book?.photo}
+                            alt="Avatar Tailwind CSS Component"
+                          />
+                        </div>
+                      </div>
+                    </div>
+                  </th>
+                  <td>{book?.book_name}</td>
+                  <td className="hidden lg:block">{book?.author_Name}</td>
+                  <td>{book?.category_name}</td>
+                  <td className="hidden lg:block">
+                    <Rate defaultValue={book?.rating} />
+                  </td>
+                  <td>
+                    <button>
+                      {" "}
+                      <Link
+                        to={`/updateBooks/${book?._id}`}
+                        className="btn btn-sm border-2 border-[#A91D3A] hover:border-[#A91D3A] text-[#A91D3A]"
+                      >
+                        Update
+                      </Link>
+                    </button>
+                  </td>
+                </tr>
+              </tbody>
+            ))}
+          </table>
+        </div>
       </div>
     </div>
   );

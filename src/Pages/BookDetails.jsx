@@ -3,7 +3,6 @@ import { useContext } from "react";
 import { useLoaderData } from "react-router-dom";
 import { AuthContext } from "../Services/AuthProvider";
 import axios from "axios";
-import Swal from "sweetalert2";
 import toast from "react-hot-toast";
 
 function BookDetails() {
@@ -59,13 +58,7 @@ function BookDetails() {
       .then((res) => {
         console.log(res.data);
         if (res.data) {
-          // Swal.fire({
-          //   confirmButtonColor: "#A91D3A",
-          //   title: "Borrow Book Successfully!",
-          //   text: "Do you want to continue",
-          //   icon: "success",
-          //   confirmButtonText: "Continue",
-          // });
+       
           toast.success("Borrow Book Successfully!");
         }
       })
