@@ -4,6 +4,7 @@ import { useLoaderData } from "react-router-dom";
 import { AuthContext } from "../Services/AuthProvider";
 import axios from "axios";
 import Swal from "sweetalert2";
+import toast from "react-hot-toast";
 
 function BookDetails() {
   const { user } = useContext(AuthContext);
@@ -22,12 +23,24 @@ function BookDetails() {
     book_name,
   } = book;
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     const form = e.target;
     const name = form.name.value;
     const email = form.email.value;
     const return_date = form.reDate.value;
+    const isBorrowed = await axios.get(
+      `${import.meta.env.VITE_API_URL}/isBorrowed/${email}/${_id}`
+    );
+    console.log(isBorrowed.data);
+    // if (!isBorrowed.data) {
+    //   console.log("you can borrow");
+    // }
+    if (isBorrowed.data) {
+      console.log("All ready exist this book");
+      toast.error("Already Borrowed This Book");
+      return;
+    }
 
     const borrowInfo = {
       name,
@@ -41,19 +54,19 @@ function BookDetails() {
       book_id: _id,
     };
 
-
     axios
       .post(`${import.meta.env.VITE_API_URL}/borrow`, borrowInfo)
       .then((res) => {
         console.log(res.data);
         if (res.data) {
-          Swal.fire({
-            confirmButtonColor: "#A91D3A",
-            title: "Borrow Book Successfully!",
-            text: "Do you want to continue",
-            icon: "success",
-            confirmButtonText: "Continue",
-          });
+          // Swal.fire({
+          //   confirmButtonColor: "#A91D3A",
+          //   title: "Borrow Book Successfully!",
+          //   text: "Do you want to continue",
+          //   icon: "success",
+          //   confirmButtonText: "Continue",
+          // });
+          toast.success("Borrow Book Successfully!");
         }
       })
       .catch((error) => {

@@ -6,7 +6,7 @@ function Footer() {
       <div className="pt-10">
         <div
           style={{
-            backgroundImage: `url(${footer})`,
+            backgroundImage: `url('${footer}')`,
           }}
           className="bg-[#e8e8e8] z-10 w-full bg-cover"
         >
