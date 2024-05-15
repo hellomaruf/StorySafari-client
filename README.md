@@ -7,14 +7,14 @@ Welcome to StorySafari, your go-to solution for efficient library management. Wi
 
 ## Features
 
-- **Efficient Catalog Management**: Easily organize and categorize your library's collection with our intuitive catalog management tools. Keep track of books, journals, magazines, and more effortlessly.
+- **Login and Register**: If you are a new user then you need to register first, then login to the website. There are some private or secret routes where you cannot go without login.
 
-- **User-Friendly Interface**: StorySafari boasts a user-friendly interface that makes navigation a breeze for both librarians and patrons. Say goodbye to complicated systems and hello to simplicity.
+- **Add Books**: You can add new books to the library as you wish. You must be logged in for this.
 
-- **Robust Search Functionality**: Our advanced search feature allows users to quickly find the books they're looking for. Whether it's by title, author, genre, or ISBN, StorySafari helps users locate their next read in no time.
+- **All Books**: On the All Books page, you can see all the books in the library, you can see the books in 2 views, a table view and a card view. And you can filter the available books.
 
-- **Customizable Settings**: Tailor StorySafari to fit your library's unique needs with customizable settings. From fine-tuning borrowing policies to adjusting notification preferences, take control of your library's operations.
+- **Category Section**: The categories of books are divided on the home page like novel, history, comics etc. You will go to the category related page which you select. There will be books in the form of cards.
 
-- **Seamless Integration**: StorySafari seamlessly integrates with existing library systems, ensuring a smooth transition for librarians and patrons alike. Say goodbye to compatibility issues and hello to hassle-free integration.
+- **Borrowed Books**: If you click on the card's view details button, you will see the details of the books and see a borrow button. Clicking on the borrow button will bring up a modal, there will be a form and a submit button, clicking on the submit button will add the specific book to the borrowed books section.
 
 Experience the future of library management with StorySafari. Visit our live site now to learn more and start your journey towards a more efficient library today!
