@@ -1,6 +1,5 @@
-# StorySafari - Your Ultimate Library Management System
+# StorySafari - Library Management System
 
-### [StorySafari](https://i.postimg.cc/JhGDZC2v/logo.png)
 
 ### [Visit StorySafari Now!](https://www.storysafari.com)
 

@@ -13,12 +13,12 @@ import { Slide } from "react-awesome-reveal";
 // import "./styles.css";
 function Hero() {
   return (
-    <div className="max-w-7xl mx-auto">
+    <div className="max-w-7xl  mx-auto">
       <div className="grid grid-cols-1 lg:grid-cols-2 mx-6 items-center gap-6 lg:gap-9 my-16 lg:my-24">
         <div className="col-span-1 text-center lg:text-left">
           <div className="space-y-6">
             <Slide damping={0.1} cascade>
-              <h1 className="text-4xl lg:text-5xl font-bold font-poppins">
+              <h1 className="text-4xl lg:text-5xl font-bold -z-10 font-poppins">
                 Books are mirrors You only see in them what you already have
                 inside you.
               </h1>

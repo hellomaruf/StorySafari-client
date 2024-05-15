@@ -13,7 +13,7 @@ function AllBooksCard() {
   return (
     <div className="max-w-7xl mx-auto my-10 lg:my-16">
       <div className="flex items-center justify-between mb-12 mx-6  lg:mx-0">
-        <div className="dropdown dropdown-right dropdown-hover">
+        <div className="dropdown dropdown-bottom md:dropdown-right dropdown-hover">
           <div tabIndex={0} role="button" className="mr-3">
             <a
               className="group relative inline-flex items-center overflow-hidden  bg-[#A91D3A] rounded-xl px-8 py-3 text-white focus:outline-none focus:ring active:bg-indigo-500"

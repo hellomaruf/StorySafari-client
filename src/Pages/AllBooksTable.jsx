@@ -14,10 +14,10 @@ function AllBooksTable() {
     <div className="max-w-7xl mx-auto my-16">
       <div className="overflow-x-auto">
         <div className="flex items-center justify-between mb-12 mx-6 lg:mx-0">
-          <div className="dropdown dropdown-right dropdown-hover">
-            <div tabIndex={0} role="button" className="mr-3">
+          <div className="dropdown dropdown-bottom md:dropdown-right dropdown-hover">
+            <div tabIndex={0} role="button" className="mr-3 z-40">
               <a
-                className="group relative inline-flex items-center overflow-hidden  bg-[#A91D3A] rounded-xl px-8 py-3 text-white focus:outline-none focus:ring active:bg-indigo-500"
+                className="group relative inline-flex items-center overflow-hidden  bg-[#A91D3A] rounded-xl px-8 py-3 text-white "
                 href="#"
               >
                 <span className="absolute -end-full transition-all group-hover:end-4">
@@ -77,58 +77,6 @@ function AllBooksTable() {
           </div>
         </div>
 
-        <table className="table">
-          {/* head */}
-          {/* <thead>
-            <tr>
-              <th className="text-base text-[#A91D3A]">Photo</th>
-              <th className="text-base text-[#A91D3A]">Book Name</th>
-              <th className="text-base text-[#A91D3A] hidden lg:block">
-                Category
-              </th>
-              <th className="text-base text-[#A91D3A]">Author Name</th>
-              <th className="text-base text-[#A91D3A] hidden lg:block">
-                Rating
-              </th>
-              <th></th>
-            </tr>
-          </thead> */}
-          {/* <tbody>
-            {filteredBooks.map((book, index) => (
-              <tr className="hover rounded-xl" key={index}>
-                <td>
-                  <div className="flex items-center gap-3">
-                    <div className="avatar">
-                      <div className="mask rounded-lg w-16 h-20">
-                        <img
-                          src={book?.photo}
-                          alt="Avatar Tailwind CSS Component"
-                        />
-                      </div>
-                    </div>
-                  </div>
-                </td>
-                <td>
-                  {book?.book_name}
-                  <br />
-                </td>
-                <td className="hidden lg:flex"> {book?.category_name}</td>
-                <td className="">{book?.author_Name}</td>
-                <td className="hidden lg:flex">
-                  <Rate defaultValue={book?.rating} />
-                </td>
-                <th>
-                  <Link
-                    to={`/updateBooks/${book?._id}`}
-                    className="btn btn-sm border-2 border-[#A91D3A] hover:border-[#A91D3A] text-[#A91D3A]"
-                  >
-                    Update
-                  </Link>
-                </th>
-              </tr>
-            ))}
-          </tbody> */}
-        </table>
 
         <div className="overflow-x-auto">
           <table className="table table-xs">
@@ -169,7 +117,7 @@ function AllBooksTable() {
                       {" "}
                       <Link
                         to={`/updateBooks/${book?._id}`}
-                        className="btn btn-sm border-2 border-[#A91D3A] hover:border-[#A91D3A] text-[#A91D3A]"
+                        className="btn btn-sm bg-transparent border-2 border-[#A91D3A] hover:border-[#A91D3A] text-[#A91D3A]"
                       >
                         Update
                       </Link>

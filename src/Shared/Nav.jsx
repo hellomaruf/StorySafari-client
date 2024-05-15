@@ -63,7 +63,7 @@ function Nav() {
   return (
     <div className="max-w-7xl mx-auto my-4">
       <Slide direction="down">
-        <div className="navbar bg-base-100">
+        <div className="navbar ">
           <div className="navbar-start">
             <div className="dropdown">
               <div
@@ -88,9 +88,42 @@ function Nav() {
               </div>
               <ul
                 tabIndex={0}
-                className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
+                className="menu menu-sm dropdown-content mt-3 z-50 p-2 shadow rounded-box w-52"
               >
-                {link}
+                
+                  <NavLink
+                    to="/"
+                    className={({ isActive }) =>
+                      isActive ? "text-[#A91D3A] pr-4" : " pr-4"
+                    }
+                  >
+                    Home
+                  </NavLink>
+                  <NavLink
+                    to="/addBooks"
+                    className={({ isActive }) =>
+                      isActive ? "text-[#A91D3A] pr-4" : " pr-4"
+                    }
+                  >
+                    Add Books
+                  </NavLink>
+                  <NavLink
+                    to="/allBooksTable"
+                    className={({ isActive }) =>
+                      isActive ? "text-[#A91D3A] pr-4" : " pr-4"
+                    }
+                  >
+                    All Books
+                  </NavLink>
+                  <NavLink
+                    to={`/borrowedBooks/${user?.email}`}
+                    className={({ isActive }) =>
+                      isActive ? "text-[#A91D3A] pr-4" : " pr-4"
+                    }
+                  >
+                    Borrowed Books
+                  </NavLink>
+               
               </ul>
             </div>
             <div className="md:flex hidden  items-center gap-2">
