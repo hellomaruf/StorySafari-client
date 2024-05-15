@@ -1,7 +1,7 @@
 # StorySafari - Library Management System
 
 
-### [Visit StorySafari Now!](https://www.storysafari.com)
+### [Visit StorySafari Now!](https://story-safari.web.app/)
 
 Welcome to StorySafari, your go-to solution for efficient library management. With StorySafari, managing your library's collection and enhancing the reading experience for patrons has never been easier. 
 
