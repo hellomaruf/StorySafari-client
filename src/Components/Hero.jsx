@@ -27,7 +27,7 @@ function Hero() {
                 ignorance, particularly if the library is very tall and the
                 surrounding area has been flooded.
               </p>
-              <button className="btn  text-white bg-[#A91D3A]">
+              <button className="btn  text-white bg-[#A91D3A] hover:bg-[#c43e59]">
                 Learn More
               </button>
               <div className="flex  lg:block items-center justify-center">

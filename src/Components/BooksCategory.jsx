@@ -38,7 +38,7 @@ function BooksCategory({ books }) {
                 />
 
                 <div className="relative p-4 sm:p-6 lg:p-8">
-                  <p className="text-sm font-medium uppercase tracking-widest text-pink-500">
+                  <p className="text-sm font-medium uppercase tracking-widest text-orange-100">
                     Category
                   </p>
 
@@ -71,7 +71,7 @@ function BooksCategory({ books }) {
                 />
 
                 <div className="relative p-4 sm:p-6 lg:p-8">
-                  <p className="text-sm font-medium uppercase tracking-widest text-pink-500">
+                  <p className="text-sm font-medium uppercase tracking-widest text-orange-100">
                     Category
                   </p>
 
@@ -104,7 +104,7 @@ function BooksCategory({ books }) {
                 />
 
                 <div className="relative p-4 sm:p-6 lg:p-8">
-                  <p className="text-sm font-medium uppercase tracking-widest text-pink-500">
+                  <p className="text-sm font-medium uppercase tracking-widest text-orange-100">
                     Category
                   </p>
 
@@ -137,7 +137,7 @@ function BooksCategory({ books }) {
                 />
 
                 <div className="relative p-4 sm:p-6 lg:p-8">
-                  <p className="text-sm font-medium uppercase tracking-widest text-pink-500">
+                  <p className="text-sm font-medium uppercase tracking-widest text-orange-100">
                     Category
                   </p>
 
@@ -170,7 +170,7 @@ function BooksCategory({ books }) {
                 />
 
                 <div className="relative p-4 sm:p-6 lg:p-8">
-                  <p className="text-sm font-medium uppercase tracking-widest text-pink-500">
+                  <p className="text-sm font-medium uppercase tracking-widest text-orange-100">
                     Category
                   </p>
 
@@ -200,7 +200,7 @@ function BooksCategory({ books }) {
                 />
 
                 <div className="relative p-4 sm:p-6 lg:p-8">
-                  <p className="text-sm font-medium uppercase tracking-widest text-pink-500">
+                  <p className="text-sm font-medium uppercase tracking-widest text-orange-100">
                     Category
                   </p>
 
@@ -231,7 +231,7 @@ function BooksCategory({ books }) {
                 />
 
                 <div className="relative p-4 sm:p-6 lg:p-8">
-                  <p className="text-sm font-medium uppercase tracking-widest text-pink-500">
+                  <p className="text-sm font-medium uppercase tracking-widest text-orange-100">
                     Category
                   </p>
 
@@ -262,7 +262,7 @@ function BooksCategory({ books }) {
                 />
 
                 <div className="relative p-4 sm:p-6 lg:p-8">
-                  <p className="text-sm font-medium uppercase tracking-widest text-pink-500">
+                  <p className="text-sm font-medium uppercase tracking-widest text-orange-200">
                     Category
                   </p>
 

@@ -9,7 +9,7 @@ function Nav() {
     logoutUser();
     setUser();
   };
-  const [theme, setTheme] = useState("lemonade");
+  const [theme, setTheme] = useState("emerald");
 
   useEffect(() => {
     localStorage.setItem("theme", theme);
@@ -20,7 +20,7 @@ function Nav() {
     if (e.target.checked) {
       setTheme("forest");
     } else {
-      setTheme("lemonade");
+      setTheme("emerald");
     }
   };
 
@@ -138,7 +138,7 @@ function Nav() {
           </div>
           <div className="navbar-end ">
             {/* theme controller */}
-            <label className="swap swap-rotate mr-3">
+            <label className="swap text-[#A91D3A] swap-rotate mr-3">
               {/* this hidden checkbox controls the state */}
               <input
                 type="checkbox"
@@ -148,7 +148,7 @@ function Nav() {
 
               {/* sun icon */}
               <svg
-                className="swap-off fill-current w-10 h-10"
+                className="swap-off fill-current w-8 h-8"
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 24 24"
               >
@@ -157,7 +157,7 @@ function Nav() {
 
               {/* moon icon */}
               <svg
-                className="swap-on fill-current w-10 h-10"
+                className="swap-on fill-current w-8 h-8"
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 24 24"
               >
