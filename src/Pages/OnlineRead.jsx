@@ -1,8 +1,30 @@
 import { Rate } from "antd";
 import useReadBooks from "../Hooks/useReadBooks";
+import { useContext } from "react";
+import { AuthContext } from "../Services/AuthProvider";
+import axios from "axios";
+import useCart from "../Hooks/useCart";
 
 function OnlineRead() {
-  const { onlineReadBooks } = useReadBooks();
+    const { onlineReadBooks } = useReadBooks();
+    const [,refetch] = useCart()
+  const { user } = useContext(AuthContext);
+  const handleAddToCart = async (book) => {
+    const bookInfo = {
+      book_id: book?._id,
+      name: book?.name,
+      price: book?.price,
+      image: book?.img,
+      email: user?.email,
+    };
+    console.log(bookInfo);
+    await axios
+      .post("https://storysafari.vercel.app/cartData", bookInfo)
+      .then((res) => {
+          console.log(res.data);
+          refetch()
+      });
+  };
   return (
     <div className="max-w-7xl mx-auto grid grid-cols-2 gap-6 my-16">
       {onlineReadBooks?.map((books, index) => (
@@ -25,7 +47,10 @@ function OnlineRead() {
                 </p>
               </div>
               <div className="mt-4">
-                <button className="btn rounded-full bg-[#A91D3A] hover:bg-[#C2405A] border-none text-white ">
+                <button
+                  onClick={() => handleAddToCart(books)}
+                  className="btn rounded-full bg-[#A91D3A] hover:bg-[#C2405A] border-none text-white "
+                >
                   Add to Cart
                 </button>
               </div>

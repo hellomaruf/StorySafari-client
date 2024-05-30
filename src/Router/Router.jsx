@@ -15,6 +15,7 @@ import UpdateBooks from "../Pages/UpdateBooks";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import OnlineRead from "../Pages/OnlineRead";
+import Cart from "../Pages/Cart";
 AOS.init();
 export const router = createBrowserRouter([
   {
@@ -117,6 +118,10 @@ export const router = createBrowserRouter([
       {
         path: "/onlineRead",
         element: <OnlineRead />,
+      },
+      {
+        path: "/cart",
+        element: <Cart />,
       },
     ],
   },

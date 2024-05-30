@@ -3,7 +3,10 @@ import logo from "../assets/images/logo.png";
 import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../Services/AuthProvider";
 import { Slide } from "react-awesome-reveal";
+import useCart from "../Hooks/useCart";
 function Nav() {
+  const [cart, refetch] = useCart();
+  refetch();
   const { user, logoutUser, setUser } = useContext(AuthContext);
   const handleLogout = () => {
     logoutUser();
@@ -179,12 +182,12 @@ function Nav() {
               </svg>
             </label>
 
-            <div className="mr-5 relative">
+            <Link to="/cart" className="mr-5 relative">
               <i className="ri-shopping-cart-2-line text-2xl"></i>
               <p className="bg-[#A91D3A] flex items-center justify-center rounded-full absolute text-sm w-[15px] -top-2 -right-2 text-white">
-                0
+                {cart?.length}
               </p>
-            </div>
+            </Link>
 
             {user ? (
               <>
