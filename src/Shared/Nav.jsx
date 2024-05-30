@@ -179,6 +179,13 @@ function Nav() {
               </svg>
             </label>
 
+            <div className="mr-5 relative">
+              <i className="ri-shopping-cart-2-line text-2xl"></i>
+              <p className="bg-[#A91D3A] flex items-center justify-center rounded-full absolute text-sm w-[15px] -top-2 -right-2 text-white">
+                0
+              </p>
+            </div>
+
             {user ? (
               <>
                 <button
