@@ -58,6 +58,14 @@ function Nav() {
       >
         Borrowed Books
       </NavLink>
+      <NavLink
+        to="/onlineRead"
+        className={({ isActive }) =>
+          isActive ? "text-[#A91D3A] pr-4" : " pr-4"
+        }
+      >
+        Online Read
+      </NavLink>
     </>
   );
   return (
@@ -90,40 +98,46 @@ function Nav() {
                 tabIndex={0}
                 className="menu menu-sm dropdown-content mt-3 z-50 p-2 shadow rounded-box w-52"
               >
-                
-                  <NavLink
-                    to="/"
-                    className={({ isActive }) =>
-                      isActive ? "text-[#A91D3A] pr-4" : " pr-4"
-                    }
-                  >
-                    Home
-                  </NavLink>
-                  <NavLink
-                    to="/addBooks"
-                    className={({ isActive }) =>
-                      isActive ? "text-[#A91D3A] pr-4" : " pr-4"
-                    }
-                  >
-                    Add Books
-                  </NavLink>
-                  <NavLink
-                    to="/allBooksTable"
-                    className={({ isActive }) =>
-                      isActive ? "text-[#A91D3A] pr-4" : " pr-4"
-                    }
-                  >
-                    All Books
-                  </NavLink>
-                  <NavLink
-                    to={`/borrowedBooks/${user?.email}`}
-                    className={({ isActive }) =>
-                      isActive ? "text-[#A91D3A] pr-4" : " pr-4"
-                    }
-                  >
-                    Borrowed Books
-                  </NavLink>
-               
+                <NavLink
+                  to="/"
+                  className={({ isActive }) =>
+                    isActive ? "text-[#A91D3A] pr-4" : " pr-4"
+                  }
+                >
+                  Home
+                </NavLink>
+                <NavLink
+                  to="/addBooks"
+                  className={({ isActive }) =>
+                    isActive ? "text-[#A91D3A] pr-4" : " pr-4"
+                  }
+                >
+                  Add Books
+                </NavLink>
+                <NavLink
+                  to="/allBooksTable"
+                  className={({ isActive }) =>
+                    isActive ? "text-[#A91D3A] pr-4" : " pr-4"
+                  }
+                >
+                  All Books
+                </NavLink>
+                <NavLink
+                  to={`/borrowedBooks/${user?.email}`}
+                  className={({ isActive }) =>
+                    isActive ? "text-[#A91D3A] pr-4" : " pr-4"
+                  }
+                >
+                  Borrowed Books
+                </NavLink>
+                <NavLink
+                  to="/onlineRead"
+                  className={({ isActive }) =>
+                    isActive ? "text-[#A91D3A] pr-4" : " pr-4"
+                  }
+                >
+                  Online Read
+                </NavLink>
               </ul>
             </div>
             <div className="md:flex hidden  items-center gap-2">
