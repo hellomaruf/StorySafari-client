@@ -9,9 +9,7 @@ function Cart() {
         <div className="mx-auto max-w-screen-xl px-4 py-8 sm:px-6 sm:py-12 lg:px-8">
           <div className="mx-auto max-w-3xl">
             <header className="text-center">
-              <h1 className="text-xl font-bold sm:text-3xl">
-                Your Cart
-              </h1>
+              <h1 className="text-xl font-bold sm:text-3xl">Your Cart</h1>
             </header>
 
             <div className="mt-8">
@@ -25,9 +23,7 @@ function Cart() {
                     />
 
                     <div>
-                      <h3 className="  font-semibold">
-                        {book?.name}
-                      </h3>
+                      <h3 className="  font-semibold">{book?.name}</h3>
 
                       <dl className="mt-0.5 space-y-px text-[15px] text-gray-600">
                         <div>

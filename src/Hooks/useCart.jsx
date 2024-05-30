@@ -9,7 +9,7 @@ function useCart() {
   } = useQuery({
     queryKey: "cartData",
     queryFn: async () => {
-      const res = await axios.get("http://localhost:3000/cartData");
+      const res = await axios.get("https://storysafari.vercel.app/cartData");
       return res.data;
     },
   });
