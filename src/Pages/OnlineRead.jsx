@@ -4,10 +4,14 @@ import { useContext } from "react";
 import { AuthContext } from "../Services/AuthProvider";
 import axios from "axios";
 import useCart from "../Hooks/useCart";
+import Swal from "sweetalert2";
+import Lottie from "react-lottie";
+import loader from "../assets/images/loader.json";
 
 function OnlineRead() {
-    const { onlineReadBooks } = useReadBooks();
-    const [,refetch] = useCart()
+  const [ onlineReadBooks,, isLoading] = useReadBooks();
+    const [, refetch] = useCart();
+    // const [,,isLoading] = useReadBooks()
   const { user } = useContext(AuthContext);
   const handleAddToCart = async (book) => {
     const bookInfo = {
@@ -21,11 +25,28 @@ function OnlineRead() {
     await axios
       .post("https://storysafari.vercel.app/cartData", bookInfo)
       .then((res) => {
-          console.log(res.data);
-          refetch()
+        if (res.data.insertedId) {
+          Swal.fire({
+            confirmButtonColor: "#A91D3A",
+            title: "Add to cart Successfully!",
+            text: "Do you want to continue",
+            icon: "success",
+            confirmButtonText: "Continue",
+          });
+        }
+        refetch();
       });
-  };
-  return (
+    };
+    const defaultOptions = {
+      loop: true,
+      autoplay: true,
+      animationData: loader,
+    };
+    return isLoading ? <>
+     <div className="max-w-44 mx-auto h-96 flex items-center justify-center">
+        <Lottie options={defaultOptions}></Lottie>
+      </div>
+    </> : <>
     <div className="max-w-7xl mx-auto grid grid-cols-2 gap-6 my-16">
       {onlineReadBooks?.map((books, index) => (
         <div key={index} className="">
@@ -59,7 +80,7 @@ function OnlineRead() {
         </div>
       ))}
     </div>
-  );
+        </>
 }
 
 export default OnlineRead;

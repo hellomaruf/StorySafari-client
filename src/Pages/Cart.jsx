@@ -2,13 +2,14 @@ import useCart from "../Hooks/useCart";
 
 function Cart() {
   const [cart] = useCart();
+  const totalPrice = cart?.reduce((total, item) => total + item?.price, 0);
   return (
     <div>
       <section>
         <div className="mx-auto max-w-screen-xl px-4 py-8 sm:px-6 sm:py-12 lg:px-8">
           <div className="mx-auto max-w-3xl">
             <header className="text-center">
-              <h1 className="text-xl font-bold text-gray-900 sm:text-3xl">
+              <h1 className="text-xl font-bold sm:text-3xl">
                 Your Cart
               </h1>
             </header>
@@ -24,7 +25,7 @@ function Cart() {
                     />
 
                     <div>
-                      <h3 className=" text-gray-900 font-semibold">
+                      <h3 className="  font-semibold">
                         {book?.name}
                       </h3>
 
@@ -76,10 +77,10 @@ function Cart() {
 
               <div className="mt-8 flex justify-end border-t border-gray-100 pt-8">
                 <div className="w-screen max-w-3xl space-y-4">
-                  <dl className="space-y-0.5 text-sm text-gray-700">
+                  <dl className="space-y-0.5 text-sm">
                     <div className="flex justify-between !text-base font-medium">
                       <dt className="text-xl">Total</dt>
-                      <dd className="text-xl text-[#A91D3A]">£200</dd>
+                      <dd className="text-xl text-[#A91D3A]">${totalPrice}</dd>
                     </div>
                   </dl>
 
