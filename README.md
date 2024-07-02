@@ -24,8 +24,8 @@ Experience the future of library management with StorySafari. Visit our live sit
 1. **Clone the repository:**
 
     ```sh
-    git clone https://github.com/username/my-react-app.git
-    cd my-react-app
+    git clone (https://github.com/hellomaruf/StorySafari-client.git)
+    cd StorySafari-client
     ```
 
 2. **Install dependencies:**
