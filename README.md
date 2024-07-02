@@ -19,6 +19,18 @@ Welcome to StorySafari, your go-to solution for efficient library management. Wi
 
 Experience the future of library management with StorySafari. Visit our live site now to learn more and start your journey towards a more efficient library today!
 
+## Technologies Used
+
+- **JavaScript (ES6+):** Core programming language for interactivity.
+- **React.js:** A JavaScript library for building user interfaces.
+- **Tailwind CSS:** A utility-first CSS framework for styling.
+- **Node.js:** Server-side JavaScript environment.
+- **Express.js:** A web application framework for Node.js.
+- **MongoDB:** A NoSQL database for storing application data.
+- **npm:** Node package manager to manage dependencies.
+- **Git & GitHub:** Version control and repository hosting.
+- **Vercel:** Deployment platform for frontend and serverless functions.
+
 ## Installation
 
 1. **Clone the repository:**
