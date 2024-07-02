@@ -18,3 +18,26 @@ Welcome to StorySafari, your go-to solution for efficient library management. Wi
 - **Borrowed Books**: If you click on the card's view details button, you will see the details of the books and see a borrow button. Clicking on the borrow button will bring up a modal, there will be a form and a submit button, clicking on the submit button will add the specific book to the borrowed books section.
 
 Experience the future of library management with StorySafari. Visit our live site now to learn more and start your journey towards a more efficient library today!
+
+## Installation
+
+1. **Clone the repository:**
+
+    ```sh
+    git clone https://github.com/username/my-react-app.git
+    cd my-react-app
+    ```
+
+2. **Install dependencies:**
+
+    ```sh
+    npm install
+    ```
+
+## Usage
+
+1. **Start the development server:**
+
+    ```sh
+    npm start
+    ```
